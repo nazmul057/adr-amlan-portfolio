@@ -1,0 +1,25 @@
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  tags: string[];
+  imageUrl: string;
+  altText: string;
+}
+
+export interface ExperienceItem {
+  id: number;
+  title: string;
+  organization: string;
+  period: string;
+  type: 'work' | 'education' | 'certification';
+  details?: string;
+  tags?: string[];
+  gpa?: string;
+  honors?: string;
+}
+
+export interface Skill {
+  category: string;
+  items: string[];
+}
