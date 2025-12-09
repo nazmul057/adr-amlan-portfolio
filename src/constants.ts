@@ -64,7 +64,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     organization: "University of Waterloo, Canada",
     period: "Sep 2023 – Dec 2024",
     type: "education",
-    details: "CGPA: 87.12/100. Focused on development processes, design effectiveness, and systems methodology.",
+    details: "Focused on development processes, design effectiveness, and systems methodology.",
     gpa: "87.12/100",
     tags: ["Systems Design", "Engineering"]
   },
@@ -74,7 +74,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     organization: "Military Institute of Science and Technology (MIST), Bangladesh",
     period: "Feb 2017 – Apr 2021",
     type: "education",
-    details: "CGPA: 3.88/4.00. President of Einthoven Club. 2nd Place in Project Showcasing at Biomedical Engineering Fest 2018.",
+    details: "President of Einthoven Club. 2nd Place in Project Showcasing at Biomedical Engineering Fest 2018.",
     gpa: "3.88/4.00",
     honors: "Dean's List",
     tags: ["Biomedical Engineering", "Leadership"]
@@ -83,10 +83,10 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     id: 5,
     title: "Data Engineering",
     organization: "Deeplearning.Ai (Coursera)",
-    period: "Completed",
+    period: "Completed (September 2025)",
     type: "certification",
     details: "Gained hands-on experience with AWS-based data pipelines.",
-    tags: ["AWS", "Data Pipelines"]
+    tags: ["AWS", "Data Pipelines", "Apache Airflow"]
   },
   {
     id: 6,

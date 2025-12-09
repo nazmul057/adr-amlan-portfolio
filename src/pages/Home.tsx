@@ -8,7 +8,6 @@ import { Github, Linkedin, FileText } from 'lucide-react';
 import ProfileImgAA from "@/supp_dcs/images/Profile_Picture_AA.jpg";
 export const PROFILE_IMAGE_URL_AA = ProfileImgAA;
 
-
 const Home: React.FC = () => {
   const navigate = useNavigate();
 
