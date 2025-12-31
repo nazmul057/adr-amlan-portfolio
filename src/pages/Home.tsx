@@ -1,12 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { HERO_IMAGE_URL, PROFILE_IMAGE_URL } from '../constants';
-import { Github, Linkedin, FileText } from 'lucide-react';
+// import { Github, Linkedin, FileText } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 // export const PROFILE_IMAGE_URL_AA = "/supp_dcs/images/Profile_Picture_AA.jpg";
 
 import ProfileImgAA from "@/supp_dcs/images/Profile_Picture_AA.jpg";
 export const PROFILE_IMAGE_URL_AA = ProfileImgAA;
+
+import AbsNetPath from "@/supp_dcs/images/Homepage_abstract_improved.png";
+export const ABSTRACT_NETWORK_IMAGE = AbsNetPath;
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -44,10 +48,18 @@ const Home: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-1 justify-center md:justify-end">
-            <div 
-              className="aspect-square w-full max-w-[400px] rounded-2xl bg-cover bg-center shadow-2xl ring-1 ring-white/10"
-              style={{ backgroundImage: `url("${HERO_IMAGE_URL}")` }}
-              aria-label="Abstract purple network structure"
+            <div
+              className="
+                aspect-square
+                w-full max-w-[260px]
+                rounded-full
+                bg-cover bg-center
+                shadow-xl
+                ring-1 ring-white/10
+              "
+              style={{ backgroundImage: `url(${PROFILE_IMAGE_URL_AA})` }}
+              // style={{ backgroundImage: `url("${HERO_IMAGE_URL}")` }}
+              aria-label="Profile image"
             />
           </div>
         </div>
@@ -59,13 +71,14 @@ const Home: React.FC = () => {
          <div className="flex flex-col gap-6 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl h-fit">
             <div 
                className="aspect-square w-full rounded-xl bg-cover shadow-inner" 
-               style={{backgroundImage: `url(${PROFILE_IMAGE_URL_AA})`}}
+               style={{backgroundImage: `url(${ABSTRACT_NETWORK_IMAGE})`}}
+               // style={{ backgroundImage: `url("${HERO_IMAGE_URL}")` }}
             />
             <div className="flex flex-col gap-5">
                <div className="grid grid-cols-1 gap-4">
                    <div>
                       <h3 className="text-xs font-bold text-primary uppercase tracking-wider">Full Name</h3>
-                      <p className="text-base text-white font-medium">Amlan Audri</p>
+                      <p className="text-base text-white font-medium">Amlan Nazmul Hai Audri</p>
                    </div>
                    <div>
                       <h3 className="text-xs font-bold text-primary uppercase tracking-wider">Location</h3>
@@ -85,21 +98,19 @@ const Home: React.FC = () => {
                   <h3 className="text-xs font-bold text-primary uppercase tracking-wider mb-2">Interests</h3>
                   <div className="flex flex-wrap gap-2">
                       <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Systems Design</span>
-                      <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Mechatronics</span>
-                      <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Data Analytics</span>
+                      <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Agentic AI</span>
+                      <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Automation</span>
+                      <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Backend Systems</span>
                       <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Biomedical</span>
                   </div>
                </div>
                
                <div className="flex gap-3 pt-2">
-                  <a href="#" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition-colors hover:bg-primary hover:text-white" aria-label="GitHub">
-                      <Github size={20} />
+                  <a href="https://github.com/nazmul057" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition-colors hover:bg-primary hover:text-white" aria-label="GitHub">
+                      <FaGithub size={20} />
                   </a>
-                  <a href="#" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition-colors hover:bg-primary hover:text-white" aria-label="LinkedIn">
-                      <Linkedin size={20} />
-                  </a>
-                  <a href="#" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition-colors hover:bg-primary hover:text-white" aria-label="Portfolio">
-                      <FileText size={20} />
+                  <a href="https://www.linkedin.com/in/amlan-audri/" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition-colors hover:bg-primary hover:text-white" aria-label="LinkedIn">
+                      <FaLinkedin size={20} />
                   </a>
                </div>
             </div>
@@ -113,7 +124,7 @@ const Home: React.FC = () => {
                     I have built core expertise in software systems and technologies. A Master’s in Systems Design Engineering complements this foundation with emphasis on development processes and design effectiveness.
                 </p>
                 <p>
-                    Beyond the core expertise, my background spans across mechatronics, data analytics, and biomedical domains, enabling a holistic, interdisciplinary approach to designing innovative, efficient, and sustainable solutions.
+                    Beyond the core expertise, my background spans across mechatronics, automation, and biomedical domains, enabling a holistic, interdisciplinary approach to designing innovative, efficient, and sustainable solutions.
                 </p>
                 <p>
                     Adept at continuous learning and rapid adaptation, I thrive in mastering emerging technologies and contributing effectively in dynamic environments.
@@ -129,8 +140,8 @@ const Home: React.FC = () => {
             </div>
          </div>
       </section>
-
-       {/* CTA */}
+       
+       {/* CTA 
        <section className="mb-10 rounded-2xl border border-white/10 bg-gradient-to-br from-primary/20 to-background-dark p-8 text-center md:p-16">
             <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">Let's Build Something Great Together</h2>
             <p className="mx-auto mb-8 max-w-lg text-white/70">
@@ -143,6 +154,7 @@ const Home: React.FC = () => {
                 Start a Conversation
             </button>
        </section>
+       */}
     </div>
   );
 };
