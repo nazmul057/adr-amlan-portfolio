@@ -68,10 +68,12 @@ const Education: React.FC = () => {
                         />
                       </summary>
                       <div className="border-t border-white/10 px-4 pb-4 pt-2">
-                        {item.details && (
-                          <p className="mb-4 text-sm leading-relaxed text-white/70">
-                            {item.details}
-                          </p>
+                        {item.details && item.details.length > 0 && (
+                          <ul className="mb-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-white/70 marker:text-primary">
+                            {item.details.map((point, i) => (
+                              <li key={i}>{point}</li>
+                            ))}
+                          </ul>
                         )}
                         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                           {item.gpa && (

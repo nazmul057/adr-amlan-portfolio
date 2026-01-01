@@ -12,11 +12,16 @@ export interface ExperienceItem {
   title: string;
   organization: string;
   period: string;
-  type: 'work' | 'education' | 'certification';
-  details?: string;
+  type: 'work' | 'education' | 'certification' | 'volunteer';
+  details?: string[];
   tags?: string[];
   gpa?: string;
   honors?: string;
+
+  link?: string;
+  engagement?: "Full-time" | "Part-time" | "Contract" | "Internship";
+
+  orgDesc?: string; // short 1–2 line description
 }
 
 export interface Skill {

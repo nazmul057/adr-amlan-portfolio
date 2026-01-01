@@ -42,72 +42,107 @@ export const PROJECTS: Project[] = [
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
     id: 1,
-    title: "Research Assistant",
-    organization: "Qatar University (Machine Learning Group)",
-    period: "Sep 2022 – Aug 2023",
+    title: "Software Engineer (AI and Backend)",
+    organization: "Infai",
+    orgDesc: "Software Startup for building AI systems and services for knowledge-centric workflows.",
+    period: "Oct 2025 – Present",
     type: "work",
-    details: "Built a real-time ECG signal analysis backend using Python (Flask) and MongoDB. Designed secure user access control improving data privacy. Co-developed standardized JSON structures reducing API miscommunications by 90%. Created scalable database schema for 500GB+ ECG data. Integrated voice recording and deployed backend on GCP with automated testing scripts.",
-    tags: ["Python", "Flask", "MongoDB", "GCP", "System Design"]
+    link: "https://infai.xyz",
+    engagement: "Part-time",
+    details:[
+      "Design of a Knowledge Graph agnostic system for interacting with different Knowledge Graphs to perform queries using a novel path aware Markhov Chain traversal algorithm.",
+      "Custom train and design of a small language model for instruction oriented chat interactions."
+    ],
+    tags: ["Python", "Langgraph", "PyTorch", "Model Context Protocol", "System Design"]
   },
   {
     id: 2,
+    title: "Research Assistant",
+    organization: "Qatar University",
+    orgDesc: "Machine Learning Group (Electrical and Electronic Engineering)",
+    period: "Sep 2022 – Aug 2023",
+    type: "work",
+    details:[
+      "Developed a backend system using Python (Flask) and MongoDB for real-time ECG signal analysis, data storage, and viewing (live and historical) for a Holter Monitoring research project.",
+      "Implemented user access control for two roles (Doctors and Patients) to ensure secure and role-specific access.",
+      "Collaborated with frontend developers to design consistent data packets for seamless and semantically correct communication between frontend and backend systems.",
+      "Designed an efficient data schema to store real-time ECG data with annotations (e.g., unusual heartbeats) while optimizing long-term database performance.",
+      "Added audio recording functionality to associate patient voice clips with specific ECG segments.",
+      "Configured and deployed the system on an AWS server, enabling backend hosting, database integration, and secure request handling.",
+      "Wrote automated test scripts and conducted both backend unit tests and integrated system tests to ensure stability after feature updates.",
+      "Modified the server infrastructure to support concurrent deployment of multiple backend systems for collecting diverse datasets for research."
+    ],
+    tags: ["Python", "Flask", "MongoDB", "GCP", "System Design"]
+  },
+  {
+    id: 3,
     title: "Research Engineer",
     organization: "University of Dhaka (Biomedical Physics & Technology)",
     period: "Nov 2021 – Aug 2023",
     type: "work",
-    details: "Designed real-time signal processing algorithms in C#, automating 12-lead ECG data acquisition. Enhanced USB communication for NCV testing devices. Applied computer vision in Java for foot pressure measurement. Built custom debugging tools and collaborated with multidisciplinary teams for system integration.",
+    details: [
+      "Designed and implemented real-time signal analysis and decision-making algorithms in C# to automate 12-lead ECG data acquisition.",
+      "Contributed to maintaining and updating engineering requirements and system specifications for an ECG telemedicine platform.",
+      "Improved USB-based communication with a biomedical device for Nerve Conduction Velocity (NCV) measurement, enhancing automation, user experience, and testing efficiency.",
+      "Developed automated report generation features from NCV test results within the C# application.",
+      "Collaborated with multidisciplinary teams to define system scope, align requirements, and ensure smooth hardware-software integration.",
+      "Updated Java-based software for compatibility with upgraded hardware for dynamic foot pressure measurement, incorporating computer vision techniques.",
+      "Built custom debugging tools for early-stage testing of USB communication with prototype biomedical devices.",
+      "Created a reusable C# class for establishing USB communication with external medical hardware.",
+      "Designed user interfaces, authored test scripts, and conducted integrated system testing for all developed modules."
+    ],
     tags: ["C#", "Java", "Computer Vision", "Embedded Systems", "Automation"]
   },
   {
-    id: 3,
+    id: 4,
     title: "Master of Engineering in Systems Design Engineering",
     organization: "University of Waterloo, Canada",
     period: "Sep 2023 – Dec 2024",
     type: "education",
-    details: "Focused on development processes, design effectiveness, and systems methodology.",
+    details: ["Focused on development processes, design effectiveness, and systems methodology."],
     gpa: "87.12/100",
     tags: ["Systems Design", "Engineering"]
   },
   {
-    id: 4,
+    id: 5,
     title: "Bachelor of Science in Biomedical Engineering",
     organization: "Military Institute of Science and Technology (MIST), Bangladesh",
     period: "Feb 2017 – Apr 2021",
     type: "education",
-    details: "President of Einthoven Club. 2nd Place in Project Showcasing at Biomedical Engineering Fest 2018.",
+    details: ["President of Einthoven Club. 2nd Place in Project Showcasing at Biomedical Engineering Fest 2018."],
     gpa: "3.88/4.00",
     honors: "Dean's List",
     tags: ["Biomedical Engineering", "Leadership"]
   },
   {
-    id: 5,
+    id: 6,
     title: "Data Engineering",
     organization: "Deeplearning.Ai (Coursera)",
     period: "Completed (September 2025)",
     type: "certification",
-    details: "Gained hands-on experience with AWS-based data pipelines.",
+    details: ["Gained hands-on experience with AWS-based data pipelines."],
     tags: ["AWS", "Data Pipelines", "Apache Airflow"]
   },
   {
-    id: 6,
+    id: 7,
     title: "Foundation: Introduction to LangGraph",
     organization: "LangChain Academy",
     period: "Completed",
     type: "certification",
-    details: "Learned to build AI agents with memory and Model Context Protocol.",
+    details: ["Learned to build AI agents with memory and Model Context Protocol."],
     tags: ["AI Agents", "LangGraph"]
   },
   {
-    id: 7,
+    id: 8,
     title: "Algorithms, Part 1",
     organization: "Princeton University (Coursera)",
     period: "Completed",
     type: "certification",
-    details: "Evaluations on Union-Find, Analysis of Algorithms, Stacks/Queues, Sorting, BSTs, Hash tables.",
+    details: ["Evaluations on Union-Find, Analysis of Algorithms, Stacks/Queues, Sorting, BSTs, Hash tables."],
     tags: ["Algorithms", "Data Structures"]
   },
   {
-    id: 8,
+    id: 9,
     title: "Software Development Processes and Methodologies",
     organization: "University of Minnesota (Coursera)",
     period: "Completed",
@@ -115,7 +150,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     tags: ["Software Engineering", "Agile"]
   },
   {
-    id: 9,
+    id: 10,
     title: "Lean Six Sigma Yellow Belt",
     organization: "Six Sigma Academy Amsterdam (Udemy)",
     period: "Completed",

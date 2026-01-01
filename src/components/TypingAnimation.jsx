@@ -2,14 +2,14 @@ import { useTypewriter } from "react-simple-typewriter";
 
 export default function TypingAnimation({
   words,
-  typeSpeed = 35,
+  typeSpeed = 25,
   delaySpeed = 500,
   showCursor = true,
-  className = "mt-2 max-w-lg text-base leading-relaxed text-white/70",
+  className = "mt-2 max-w-lg text-base leading-relaxed font-bold text-white/70",
 }) {
   const [text, helper] = useTypewriter({
     words,
-    loop: Infinity,          // type through the list once
+    loop: 3,          // type through the list once
     typeSpeed,
     deleteSpeed: 0,   // no deleting (clean, non-gimmicky)
     delaySpeed: 4000,
