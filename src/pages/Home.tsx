@@ -3,13 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { HERO_IMAGE_URL, PROFILE_IMAGE_URL } from '../constants';
 // import { Github, Linkedin, FileText } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Typewriter } from "react-simple-typewriter";
 
 // export const PROFILE_IMAGE_URL_AA = "/supp_dcs/images/Profile_Picture_AA.jpg";
+import TypingAnimation from "@/components/TypingAnimation";
+// Start test Typewriter
+
+// End test typewriter
 
 import ProfileImgAA from "@/supp_dcs/images/Profile_Picture_AA.jpg";
 export const PROFILE_IMAGE_URL_AA = ProfileImgAA;
 
-import AbsNetPath from "@/supp_dcs/images/Homepage_abstract_improved.png";
+import AbsNetPath from "@/supp_dcs/images/homepage_abstract_improved.png";
 export const ABSTRACT_NETWORK_IMAGE = AbsNetPath;
 
 const Home: React.FC = () => {
@@ -28,9 +33,21 @@ const Home: React.FC = () => {
               <h2 className="text-lg font-medium text-primary sm:text-xl">
                 Systems Design | Biomedical Engineer | Software Specialist
               </h2>
+              {/*
               <p className="mt-2 max-w-lg text-base leading-relaxed text-white/70">
-                Fascinated by the visions, ingenuity, and engineering behind modern computing and information infrastructure.
+                <Typewriter
+                  words={[
+                    "Drawn to the challenge of orchestrating complexity toward effective outcomes."
+                  ]}
+                  typeSpeed={35}
+                  cursor
+                  cursorStyle="|"
+                />
               </p>
+              */}
+              <TypingAnimation words={["Drawn to the challenge of orchestrating complexity toward effective outcomes.",
+                "Systems thinking, software, and interdisciplinary engineering at the core."
+              ]}/>
             </div>
             <div className="flex gap-3">
               <button 
@@ -99,6 +116,7 @@ const Home: React.FC = () => {
                   <div className="flex flex-wrap gap-2">
                       <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Systems Design</span>
                       <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Agentic AI</span>
+                      <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Data Engineering</span>
                       <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Automation</span>
                       <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Backend Systems</span>
                       <span className="px-2 py-1 rounded-md bg-white/10 text-xs font-medium text-white/80">Biomedical</span>
@@ -118,16 +136,13 @@ const Home: React.FC = () => {
 
          {/* About Text Placeholder */}
          <div className="lg:col-span-2 flex flex-col justify-center gap-6 rounded-2xl border border-white/10 bg-white/5 p-8 lg:p-12">
-            <h2 className="text-3xl font-bold text-white">About Me</h2>
+            <h2 className="text-3xl font-bold text-white">Profile Summary</h2>
             <div className="space-y-6 text-lg text-white/70 leading-relaxed">
                 <p>
-                    I have built core expertise in software systems and technologies. A Master’s in Systems Design Engineering complements this foundation with emphasis on development processes and design effectiveness.
+                  Fascinated by the visions, ingenuity, and engineering behind modern computing and information infrastructure, I have built core expertise in software systems and technologies. A Master’s in Systems Design Engineering complements this foundation with emphasis on development processes and design effectiveness.
                 </p>
                 <p>
-                    Beyond the core expertise, my background spans across mechatronics, automation, and biomedical domains, enabling a holistic, interdisciplinary approach to designing innovative, efficient, and sustainable solutions.
-                </p>
-                <p>
-                    Adept at continuous learning and rapid adaptation, I thrive in mastering emerging technologies and contributing effectively in dynamic environments.
+                  Beyond the core expertise, my background spans across mechatronics, data analytics, and biomedical domains, enabling a holistic, interdisciplinary approach to designing innovative, efficient, and sustainable solutions. Adept at continuous learning and rapid adaptation, I thrive in mastering emerging technologies and contributing effectively in dynamic environments.
                 </p>
             </div>
             <div className="mt-4">
