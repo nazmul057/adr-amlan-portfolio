@@ -27,7 +27,7 @@ const Home: React.FC = () => {
         <div className="flex flex-col-reverse gap-8 md:flex-row md:items-center">
           <div className="flex flex-1 flex-col gap-6">
             <div className="flex flex-col gap-2">
-              <h1 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
+              <h1 className="text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
                 Amlan Audri
               </h1>
               <h2 className="text-lg font-medium text-primary sm:text-xl">
@@ -136,9 +136,9 @@ const Home: React.FC = () => {
          </div>
 
          {/* About Text Placeholder */}
-         <div className="lg:col-span-2 flex flex-col justify-center gap-6 rounded-2xl border border-white/10 bg-white/5 p-8 lg:p-12">
-            <h2 className="text-3xl font-bold text-white">Profile Summary</h2>
-            <div className="space-y-6 text-lg text-white/70 leading-relaxed">
+         <div className="lg:col-span-2 flex flex-col justify-start gap-6 rounded-2xl border border-white/10 bg-white/5 p-8 lg:p-12">
+            <h2 className="text-2xl font-bold text-white">Profile Summary</h2>
+            <div className="space-y-6 text-base text-white/70 leading-relaxed">
                 <p>
                   Fascinated by the visions, ingenuity, and engineering behind modern computing and information infrastructure, I have built core expertise in software systems and technologies. A Master’s in Systems Design Engineering complements this foundation with emphasis on development processes and design effectiveness.
                 </p>

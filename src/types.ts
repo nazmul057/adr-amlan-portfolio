@@ -12,10 +12,12 @@ export interface ExperienceItem {
   title: string;
   organization: string;
   period: string;
-  type: 'work' | 'education' | 'certification' | 'volunteer';
+  type: 'work' | 'education' | 'certification' | 'volunteer' | 'leadership_extracurricular';
+  orgType?: string,
   details?: string[];
+  courses?: string[];
   tags?: string[];
-  gpa?: string;
+  cgpa?: string;
   honors?: string;
 
   link?: string;

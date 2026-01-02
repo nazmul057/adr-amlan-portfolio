@@ -6,7 +6,7 @@ const Skills: React.FC = () => {
   return (
     <div className="flex flex-col gap-10">
        <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl">
+        <h1 className="text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl">
             Technical Skills
         </h1>
         <p className="text-lg text-white/60">

@@ -23,7 +23,7 @@ const Projects: React.FC = () => {
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-4">
-        <h1 className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-4xl font-black leading-tight tracking-tight text-transparent sm:text-5xl">
+        <h1 className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-3xl font-black leading-tight tracking-tight text-transparent sm:text-4xl">
             My Work
         </h1>
         <p className="max-w-2xl text-lg text-white/60">

@@ -45,9 +45,10 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     title: "Software Engineer (AI and Backend)",
     organization: "Infai",
     orgDesc: "Software Startup for building AI systems and services for knowledge-centric workflows.",
+    orgType: "Company",
     period: "Oct 2025 – Present",
     type: "work",
-    link: "https://infai.xyz",
+    link: "https://www.linkedin.com/company/infai-llc/",
     engagement: "Part-time",
     details:[
       "Design of a Knowledge Graph agnostic system for interacting with different Knowledge Graphs to perform queries using a novel path aware Markhov Chain traversal algorithm.",
@@ -77,7 +78,8 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
     id: 3,
     title: "Research Engineer",
-    organization: "University of Dhaka (Biomedical Physics & Technology)",
+    organization: "University of Dhaka",
+    orgDesc: "Biomedical Physics & Technology",
     period: "Nov 2021 – Aug 2023",
     type: "work",
     details: [
@@ -100,8 +102,8 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     period: "Sep 2023 – Dec 2024",
     type: "education",
     details: ["Focused on development processes, design effectiveness, and systems methodology."],
-    gpa: "87.12/100",
-    tags: ["Systems Design", "Engineering"]
+    courses: ["Optimization", "Systems Modeling", "Control Systems"],
+    cgpa: "87.12/100"
   },
   {
     id: 5,
@@ -110,16 +112,17 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     period: "Feb 2017 – Apr 2021",
     type: "education",
     details: ["President of Einthoven Club. 2nd Place in Project Showcasing at Biomedical Engineering Fest 2018."],
-    gpa: "3.88/4.00",
-    honors: "Dean's List",
-    tags: ["Biomedical Engineering", "Leadership"]
+    cgpa: "3.88/4.00",
+    honors: "Dean's List"
   },
   {
     id: 6,
     title: "Data Engineering",
-    organization: "Deeplearning.Ai (Coursera)",
+    organization: "Deeplearning.Ai",
+    orgDesc: "Coursera",
     period: "Completed (September 2025)",
     type: "certification",
+    link: "https://academy.langchain.com/certificates/ayoz20o8gt",
     details: ["Gained hands-on experience with AWS-based data pipelines."],
     tags: ["AWS", "Data Pipelines", "Apache Airflow"]
   },
@@ -156,6 +159,29 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     period: "Completed",
     type: "certification",
     tags: ["Process Improvement", "Six Sigma"]
+  },
+  {
+    id: 11,
+    title: "Volunteer",
+    organization: "Sunnybrook Health Sciences",
+    period: "Sep 2025 – Present",
+    type: "volunteer",
+    details: [
+      "Helping the attendents at the Same Day Surgery.",
+      "Transporting discharged Patients."
+    ]
+  },
+  {
+    id: 12,
+    title: "President",
+    organization: "Einthoven Club",
+    period: "Jan 2020 – Apr 2021",
+    type: "leadership_extracurricular",
+    details: [
+      "Led Student Club.",
+      "Organized Events.",
+      "Coordinated student led research"
+    ]
   }
 ];
 

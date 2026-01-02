@@ -1,6 +1,6 @@
 import React from 'react';
 import { EXPERIENCE_DATA } from '../constants';
-import { School, Award, ChevronDown } from 'lucide-react';
+import { School, Award, ChevronDown, ExternalLink } from 'lucide-react';
 
 const Education: React.FC = () => {
   const educationHistory = EXPERIENCE_DATA.filter(
@@ -41,17 +41,62 @@ const Education: React.FC = () => {
 
                 {/* Content Column */}
                 <div className="flex flex-col pb-16">
-                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
-                    <h3 className="text-xl font-bold text-white">
-                      {item.organization}
-                    </h3>
-                    <span className="text-sm font-medium text-white/60">
+                  {/* Header Row: organization + period */}
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                    <div className="min-w-0">
+                      {/* Organization */}
+                      <h3 className="text-xl font-bold text-white">
+                        {item.organization}
+                      </h3>
+
+                      {/* Organization description + credentials link */}
+                      {(item.orgDesc || item.link) && (
+                        <div className="mt-2 flex flex-col gap-2">
+                          {item.orgDesc && (
+                            <p className="max-w-2xl text-sm leading-relaxed text-white/60">
+                              {item.orgDesc}
+                            </p>
+                          )}
+
+                          {item.link && (
+                            <a
+                              href={item.link}
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label={
+                                isCertificationSection
+                                  ? 'Open external credential link'
+                                  : 'Open external organization link'
+                              }
+                              className="
+                                inline-flex w-fit items-center gap-2
+                                rounded-lg border border-white/10
+                                bg-white/5 px-3 py-1.5
+                                text-xs font-medium text-white/70
+                                transition-colors
+                                hover:border-white/20 hover:bg-white/10 hover:text-white
+                              "
+                            >
+                              <span>
+                                {isCertificationSection ? 'View Credential' : 'Explore Organization'}
+                              </span>
+                              <ExternalLink size={14} className="opacity-70" />
+                            </a>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Title */}
+                      <p className="mt-3 text-lg font-medium text-primary">
+                        {item.title}
+                      </p>
+                    </div>
+
+                    {/* Period */}
+                    <span className="shrink-0 text-sm font-medium text-white/60 sm:mt-1">
                       {item.period}
                     </span>
                   </div>
-                  <p className="mt-1 text-lg font-medium text-primary">
-                    {item.title}
-                  </p>
 
                   {/* Details Card */}
                   <div className="mt-4 rounded-xl border border-white/10 bg-white/5 p-1 transition-colors hover:border-white/20">
@@ -76,35 +121,71 @@ const Education: React.FC = () => {
                           </ul>
                         )}
                         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                          {item.gpa && (
+                          {item.cgpa && (
                             <div className="text-sm text-white/80">
-                              <span className="font-semibold text-primary">
-                                GPA:
+                              <span className="font-semibold text-purple-500">
+                                CGPA:
                               </span>{' '}
-                              {item.gpa}
+                              {item.cgpa}
                             </div>
                           )}
                           {item.honors && (
                             <div className="text-sm text-white/80">
-                              <span className="font-semibold text-primary">
+                              <span className="font-semibold text-purple-500">
                                 Honors:
                               </span>{' '}
                               {item.honors}
                             </div>
                           )}
                         </div>
+
+                        {item.courses && item.courses.length > 0 && (
+                          <div className="mt-4">
+                            <div className="mb-2 text-sm font-semibold text-white/80">
+                              Key Courses
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                              {item.courses.map(course => (
+                                <span
+                                  key={course}
+                                  className="
+                                    flex h-7 items-center rounded-lg
+                                    bg-primary/5
+                                    px-3 text-xs font-medium
+                                    text-purple-400
+                                    border border-primary/25
+                                    transition-colors
+                                    hover:text-purple-300 hover:bg-primary/10
+                                  "
+                                >
+                                  {course}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
                         {item.tags && (
                           <div className="mt-4 flex flex-wrap gap-2">
                             {item.tags.map(tag => (
                               <span
                                 key={tag}
-                                className="flex h-7 items-center rounded-lg bg-primary/10 px-3 text-xs font-medium text-primary"
+                                className="
+                                    flex h-7 items-center rounded-lg
+                                    bg-primary/5
+                                    px-3 text-xs font-medium
+                                    text-purple-400
+                                    border border-primary/25
+                                    transition-colors
+                                    hover:text-purple-300 hover:bg-primary/10
+                                  "
                               >
                                 {tag}
                               </span>
                             ))}
                           </div>
                         )}
+
                       </div>
                     </details>
                   </div>
@@ -120,7 +201,7 @@ const Education: React.FC = () => {
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl">
+        <h1 className="text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl">
           Education & Certifications
         </h1>
         <p className="text-lg text-white/60">
