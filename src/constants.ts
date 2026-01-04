@@ -8,34 +8,52 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "Real-Time ECG Analysis Backend",
-    description: "Built a backend using Python (Flask) and MongoDB supporting continuous data flow, live visualization, and storage for a Holter monitoring project. Hosted over 150 sessions.",
+    description: [
+      "Built a backend using Python (Flask) and MongoDB supporting continuous data flow, live visualization, and storage for a Holter monitoring project."
+    ],
+    types: ["Software", "Biomedical", "Backend"],
     tags: ["Python", "Flask", "MongoDB", "GCP"],
     imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuB8k7e0y5JJgQ0qwm_yRLJ33VUpyBf1Y5ESVFkqlXZGMbH7RnLQYFEts-043E_y1gYkTv-dFhzRwt7XzSmWRgBA0WHgwvsZzYQ4s6CC9QZcNdGPHBXD4pzoczDt1j31VIEcwNjQejpfXz_iqlrAsOy1CHal3IuPQ8z3_7D-3flw_19R-R__Le3zQUTW0ft1NfNK3bDRwlbHvi93SZLYpQo4JAoFircu4rtktQy-GN0sbIRojofCGEwutSUSE4rJXWmiyyivypR3FiuA",
-    altText: "ECG Signal Analysis"
+    altText: "ECG Signal Analysis",
+    href: "https://sites.google.com/view/aa-real-time-ecg-analysis/home"
   },
   {
     id: 2,
     title: "Automated NCV Testing Device",
-    description: "Designed and implemented real-time signal processing algorithms in C# and automated USB-based communication, reducing manual intervention by over 70%.",
+    description: [
+      "Designed and implemented real-time signal processing algorithms in C# and automated USB-based communication."
+    ],
+    types: ["Software", "Biomedical"],
     tags: ["C#", "Signal Processing", "USB Communication", "Automation"],
     imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBr1KL-TcwtJDJgNvpDzRh1FtjWN3BFVEa02VXx0XDztZDX0JTpcA5WH3c-zAhhGhb3YG34QLNCgRA07YMYwSVJuszf1kt3F9PW_X_rTeEuwtphmEGurD5YK4MwOSmZrMG3lzRIhRrmSXAo28yFSClAC0gL982Qhtk65fCUhXfvHbWj8rMcz80RqITzy4ZgwfNE1IF1BfEEkwT4rF3bjNQFsXRbaeNGbxC2-vzBVU-_4AuOhKhA_FknpcrlTPaQq0lBbx7mzEKeHR1Q",
-    altText: "Medical Device Testing"
+    altText: "Medical Device Testing",
+    href: "https://sites.google.com/view/aa-ncv-project/home"
   },
   {
     id: 3,
-    title: "Foot Pressure Measurement Software",
-    description: "Updated Java-based software with computer vision techniques for dynamic foot pressure measurement, improving scientific accuracy and reducing machine height by 65%.",
-    tags: ["Java", "Computer Vision", "Hardware Integration"],
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBfi0aNgZ02Cxgg5O_Nh3n3kVK8jjfeQcEQdFedxsXDS7-vOSHzc3vW_tKiNzl7XLd2PAjnzjXzMy2p_286hFC6eUaLedBP8GgvGB_fzSeTo6b5Fcu_nsRAYokhVcEsVPtw4KQAgnKW9T2YuhQ0yjFM1wjY2DDe_dBwTdp6tX_Rbxl_lztL12x1lPVuwexziP4TOO9Kh_BlKTQoQSsr5lzHEGteKZnbIdGAzeTgu0IuIt_Wot64Eaonvsd5vD8LzrPKYNOeeNgA_Sq8",
-    altText: "Data Visualization"
+    title: "Medical Data Storage and Management System for Hospitals",
+    description: [
+      "Designed secure user access control with distinct roles (Doctors, Patients, Admins) for a clinical research platform, ensuring data privacy and compliance."
+    ],
+    types: ["Software", "Biomedical"],
+    tags: ["Security", "System Design", "Healthcare"],
+    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDjfBBea_6oiIJl8EJnojU9e7al-704r9Uqq-pxKrC95EJXrfEfNdMgVtoPmdWcVT_nOjMJeEhmqK5x_ejjp6SMhSQzGsltr2AymNFf0OQaJgWG4tccRqdIOeAZWCgzZ-j8iVLZqiWyMUUc_RtE2Cmaeu6kl4-FnPMIf9rFD4I_Obip2CQlckCcdnC3cXaxMqxJysLetDbwU3ndyzwrJqU00uitHM5eAyLqtd5M6-zFNfRnAsA2lk6Pk_hYQnvkR4swSzwdBQjihMpd",
+    altText: "Secure Access System",
+    href: "https://sites.google.com/view/hospital-system-nazmul-audri/home"
   },
   {
     id: 4,
-    title: "Clinical Data Access Control System",
-    description: "Designed secure user access control with distinct roles (Doctors, Patients, Admins) for a clinical research platform, ensuring data privacy and compliance.",
-    tags: ["Security", "System Design", "Healthcare"],
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDjfBBea_6oiIJl8EJnojU9e7al-704r9Uqq-pxKrC95EJXrfEfNdMgVtoPmdWcVT_nOjMJeEhmqK5x_ejjp6SMhSQzGsltr2AymNFf0OQaJgWG4tccRqdIOeAZWCgzZ-j8iVLZqiWyMUUc_RtE2Cmaeu6kl4-FnPMIf9rFD4I_Obip2CQlckCcdnC3cXaxMqxJysLetDbwU3ndyzwrJqU00uitHM5eAyLqtd5M6-zFNfRnAsA2lk6Pk_hYQnvkR4swSzwdBQjihMpd",
-    altText: "Secure Access System"
+    title: "Optimizing Hydrogen Production Efficiency at Fuel Stations",
+    description: [
+      "Independent master's course project completed over two months",
+      "Focused on controlling production rates to improve energy efficiency in electrolytic hydrogen production systems",
+      "Covered the full project lifecycle from initial concept development through final results"
+    ],
+    types: ["Software", "Mathematical Model", "Dynamic System"],
+    tags: ["Java", "Computer Vision", "Hardware Integration"],
+    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBfi0aNgZ02Cxgg5O_Nh3n3kVK8jjfeQcEQdFedxsXDS7-vOSHzc3vW_tKiNzl7XLd2PAjnzjXzMy2p_286hFC6eUaLedBP8GgvGB_fzSeTo6b5Fcu_nsRAYokhVcEsVPtw4KQAgnKW9T2YuhQ0yjFM1wjY2DDe_dBwTdp6tX_Rbxl_lztL12x1lPVuwexziP4TOO9Kh_BlKTQoQSsr5lzHEGteKZnbIdGAzeTgu0IuIt_Wot64Eaonvsd5vD8LzrPKYNOeeNgA_Sq8",
+    altText: "Data Visualization",
+    href: "https://github.com/nazmul057/Electrolytic_Hydrogen_Production_Optimization"
   }
 ];
 
@@ -98,11 +116,26 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
     id: 4,
     title: "Master of Engineering in Systems Design Engineering",
-    organization: "University of Waterloo, Canada",
+    organization: "University of Waterloo, Ontario, Canada",
     period: "Sep 2023 – Dec 2024",
     type: "education",
-    details: ["Focused on development processes, design effectiveness, and systems methodology."],
-    courses: ["Optimization", "Systems Modeling", "Control Systems"],
+    details: [
+      "Principles, methodologies, and strategies for building effective Engineering Systems.",
+      "Modeling and Simulating Physical Systems.",
+      "Interfacing physical and computational domains.",
+      "Modular design and full System Integration."
+    ],
+    courses: [
+      "Systems Theory, Models, Research, & Design (SYDE 600)",
+      "Dynamics of Multibody Systems (SYDE 652)",
+      "Methods and Principles of Safety-Critical Embedded Software (ECE 652)",
+      "Advanced Micro-electromechanical Systems (SYDE 682)",
+      "Control of Machines and Processes (ME 649)",
+      "Fundamentals of Continuous System Models (SYDE 620)",
+      "Optimization Methods (SYDE 632)",
+      "Data Analysis (BE 602)",
+      "Project Management (BE 605)"
+    ],
     cgpa: "87.12/100"
   },
   {
@@ -111,7 +144,12 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     organization: "Military Institute of Science and Technology (MIST), Bangladesh",
     period: "Feb 2017 – Apr 2021",
     type: "education",
-    details: ["President of Einthoven Club. 2nd Place in Project Showcasing at Biomedical Engineering Fest 2018."],
+    details: [
+      "Acquired knowledge over a diverse set of Engineering Domains.",
+      "Gained expertise in applying Software Engineering, Computation, and Math in solving Biomedical challenges.",
+      "Industrial training on the operations of Biomedical Engineering Department of a Hospital.",
+      "Final year project on a cloud system for managing and sharing electronic health data."
+    ],
     cgpa: "3.88/4.00",
     honors: "Dean's List"
   },
@@ -122,7 +160,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     orgDesc: "Coursera",
     period: "Completed (September 2025)",
     type: "certification",
-    link: "https://academy.langchain.com/certificates/ayoz20o8gt",
+    link: "https://www.coursera.org/account/accomplishments/verify/9OKHM6XVCSW0",
     details: ["Gained hands-on experience with AWS-based data pipelines."],
     tags: ["AWS", "Data Pipelines", "Apache Airflow"]
   },
@@ -132,6 +170,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     organization: "LangChain Academy",
     period: "Completed",
     type: "certification",
+    link: "https://academy.langchain.com/certificates/ayoz20o8gt",
     details: ["Learned to build AI agents with memory and Model Context Protocol."],
     tags: ["AI Agents", "LangGraph"]
   },
@@ -141,7 +180,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     organization: "Princeton University (Coursera)",
     period: "Completed",
     type: "certification",
-    details: ["Evaluations on Union-Find, Analysis of Algorithms, Stacks/Queues, Sorting, BSTs, Hash tables."],
+    details: ["Evaluations on Union-Find, Analysis of Algorithms, Stacks/Queues, Priority Queues, Sorting Algorithms, BSTs, Hash tables."],
     tags: ["Algorithms", "Data Structures"]
   },
   {
@@ -158,6 +197,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     organization: "Six Sigma Academy Amsterdam (Udemy)",
     period: "Completed",
     type: "certification",
+    link: "https://www.virtualbadge.io/certificate-validator?credential=aab3593c-9c2e-46cb-b347-3f2bd61fcbce",
     tags: ["Process Improvement", "Six Sigma"]
   },
   {

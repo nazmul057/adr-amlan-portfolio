@@ -46,8 +46,13 @@ const Education: React.FC = () => {
                     <div className="min-w-0">
                       {/* Organization */}
                       <h3 className="text-xl font-bold text-white">
-                        {item.organization}
+                        {item.title}
                       </h3>
+
+                      {/* Title */}
+                      <p className="mt-3 text-lg font-medium text-primary">
+                        {item.organization}
+                      </p>
 
                       {/* Organization description + credentials link */}
                       {(item.orgDesc || item.link) && (
@@ -85,11 +90,6 @@ const Education: React.FC = () => {
                           )}
                         </div>
                       )}
-
-                      {/* Title */}
-                      <p className="mt-3 text-lg font-medium text-primary">
-                        {item.title}
-                      </p>
                     </div>
 
                     {/* Period */}

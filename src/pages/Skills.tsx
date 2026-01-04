@@ -45,9 +45,11 @@ const Skills: React.FC = () => {
             <h3 className="mb-4 text-xl font-bold text-white">Continuous Learning</h3>
             <p className="text-white/70 max-w-3xl leading-relaxed">
                 Technology is constantly evolving, and so am I. I am currently expanding my knowledge in 
-                <span className="text-primary font-medium"> Generative AI</span>, 
-                <span className="text-primary font-medium"> Rust</span>, and 
-                <span className="text-primary font-medium"> Advanced System Architecture</span>. 
+                <span className="text-purple-600 font-medium"> Agentic AI</span>,
+                <span className="text-purple-600 font-medium"> LLM</span>,
+                <span className="text-purple-600 font-medium"> Knowledge Graphs</span>, 
+                <span className="text-purple-600 font-medium"> Rust</span>, and 
+                <span className="text-purple-600 font-medium"> Advanced System Architecture</span>. 
                 I believe in selecting the right tool for the job and am always eager to pick up new frameworks and languages as needed.
             </p>
       </div>

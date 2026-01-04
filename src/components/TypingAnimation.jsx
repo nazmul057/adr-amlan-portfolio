@@ -9,7 +9,7 @@ export default function TypingAnimation({
 }) {
   const [text, helper] = useTypewriter({
     words,
-    loop: 3,          // type through the list once
+    loop: Infinity,          // type through the list once
     typeSpeed,
     deleteSpeed: 0,   // no deleting (clean, non-gimmicky)
     delaySpeed: 4000,

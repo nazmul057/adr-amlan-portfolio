@@ -45,9 +45,13 @@ const Home: React.FC = () => {
                 />
               </p>
               */}
-              <TypingAnimation words={["Drawn to the challenge of orchestrating complexity toward effective outcomes.",
-                "Systems thinking, software, and interdisciplinary engineering at the core.",
-                "Drawn to the challenge of orchestrating complexity toward effective outcomes.",
+              <TypingAnimation words={[
+                "Hi! I am Amlan.",
+                "Nice to see you visiting my webpage.",
+                "Feel free to jump across different sections about my profile.",
+                "Explore my Journey, Projects, Education, and Skills.",
+                "I am drawn to the challenge of orchestrating complexity toward effective outcomes.",
+                "Systems thinking, software, and interdisciplinary engineering domains are at my core."
               ]}/>
             </div>
             <div className="flex gap-3">

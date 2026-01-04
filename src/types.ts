@@ -1,11 +1,31 @@
+// types.ts
+
+export type ProjectType =
+  | "Software"
+  | "Data Engineering"
+  | "Biomedical"
+  | "Machine Learning"
+  | "Mathematical Model"
+  | "Mechatronics"
+  | "Dynamic System"
+  | "Backend";
+
 export interface Project {
   id: number;
   title: string;
-  description: string;
+
+  // bullet-point description
+  description: string[];
+
+  // changed: multi-type support
+  types: ProjectType[];
+
   tags: string[];
   imageUrl: string;
   altText: string;
+  href: string;
 }
+
 
 export interface ExperienceItem {
   id: number;
