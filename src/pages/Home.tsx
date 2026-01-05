@@ -26,6 +26,7 @@ const Home: React.FC = () => {
   const hobbies = [
     "Bicycling",
     "Artistic 3D Design",
+    "Paramotors",
     "Cooking",
     "Dodgeball",
     "Tennis",
