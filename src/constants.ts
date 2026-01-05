@@ -1,7 +1,20 @@
 import { ExperienceItem, Project, Skill } from './types';
 
-export const HERO_IMAGE_URL = "https://lh3.googleusercontent.com/aida-public/AB6AXuCMyug9YT0psdG1j2Z-LzsOZuOc2gXBZlgdC9KRmvXkot30PblFnkIjBYutXm9SzNcMx_QU6Gy6Y03kndagbewEDbZG6tf7lDHOwfZZUGqOs9VQEsGnoyC-jG-NOOvWt_uuxSYMEbpNkpZ3S0bu2LWPn4fN6eU8cn4KoZn8o5M__hOpOi6TaTr-nldDJBoObac-3mgT2Bp8F9YM31cW-xqQdk6u0DlvBNXRsEqdt8EEugbX7rb4yluY6wxVFfdqY-NI8-Oom66DmLrq";
-export const PROFILE_IMAGE_URL = "https://lh3.googleusercontent.com/aida-public/AB6AXuCJjjUubISPk8ThBLIfhumnO902QJd74PUhvahdgY6MKzFZ2-l-FnYSDY_USvQMMv03XJGgh11IEMwYUlMkEJTiABWuriXwAOrjarNVGgnoDx15_F7VKPVQkTIeJi9sN9u8v8FwWCn_-9doYxHMme1So-nx6jkB4uDHxBB1WiPjmrbPYiRaAkmGg2MUhQh21omhmReJy5sdOzo37GEHUQ8c4k1aiyeK81yCYrqMizaCbvIC8eCcUhVouEvgn0GqXq1hq1fo-gvoUOZu";
+
+export const EMAIL_ADDRESS_AA = "adr.nazmul@gmail.com";
+export const PHONE_NUMBER_AA = "+1 548 577 4072";
+export const LINKEDIN_URL_AA = "https://www.linkedin.com/in/amlan-audri/";
+export const GITHUB_URL_AA = "https://github.com/nazmul057";
+
+
+import QU_ECG_PROJ_IMAGE from "@/supp_dcs/project_card_images/qatar_ecg.png";
+import PERIPHERAL_VISION_LOSS_PROJ_IMAGE from "@/supp_dcs/project_card_images/peripheral_vision_loss.png";
+import NCV_PROJ_IMAGE from "@/supp_dcs/project_card_images/ncv.png";
+import MULTILINK_SUSPENSION_PROJ_IMAGE from "@/supp_dcs/project_card_images/multilink_suspension.png";
+import HOSPITAL_SYSTEM_PROJ_IMAGE from "@/supp_dcs/project_card_images/hospital_system.png";
+import H2_OPT_PROJ_IMAGE from "@/supp_dcs/project_card_images/h2_optimization.png";
+import DAQ_PROJ_IMAGE from "@/supp_dcs/project_card_images/daq.png";
+import BLENDER_CAR_PROJ_IMAGE from "@/supp_dcs/project_card_images/blender_car.png";
 
 // Projects derived from Professional Experience for display purposes
 export const PROJECTS: Project[] = [
@@ -13,7 +26,7 @@ export const PROJECTS: Project[] = [
     ],
     types: ["Software", "Biomedical", "Backend"],
     tags: ["Python", "Flask", "MongoDB", "GCP"],
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuB8k7e0y5JJgQ0qwm_yRLJ33VUpyBf1Y5ESVFkqlXZGMbH7RnLQYFEts-043E_y1gYkTv-dFhzRwt7XzSmWRgBA0WHgwvsZzYQ4s6CC9QZcNdGPHBXD4pzoczDt1j31VIEcwNjQejpfXz_iqlrAsOy1CHal3IuPQ8z3_7D-3flw_19R-R__Le3zQUTW0ft1NfNK3bDRwlbHvi93SZLYpQo4JAoFircu4rtktQy-GN0sbIRojofCGEwutSUSE4rJXWmiyyivypR3FiuA",
+    imageUrl: QU_ECG_PROJ_IMAGE,
     altText: "ECG Signal Analysis",
     href: "https://sites.google.com/view/aa-real-time-ecg-analysis/home"
   },
@@ -25,7 +38,7 @@ export const PROJECTS: Project[] = [
     ],
     types: ["Software", "Biomedical"],
     tags: ["C#", "Signal Processing", "USB Communication", "Automation"],
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBr1KL-TcwtJDJgNvpDzRh1FtjWN3BFVEa02VXx0XDztZDX0JTpcA5WH3c-zAhhGhb3YG34QLNCgRA07YMYwSVJuszf1kt3F9PW_X_rTeEuwtphmEGurD5YK4MwOSmZrMG3lzRIhRrmSXAo28yFSClAC0gL982Qhtk65fCUhXfvHbWj8rMcz80RqITzy4ZgwfNE1IF1BfEEkwT4rF3bjNQFsXRbaeNGbxC2-vzBVU-_4AuOhKhA_FknpcrlTPaQq0lBbx7mzEKeHR1Q",
+    imageUrl: NCV_PROJ_IMAGE,
     altText: "Medical Device Testing",
     href: "https://sites.google.com/view/aa-ncv-project/home"
   },
@@ -37,7 +50,7 @@ export const PROJECTS: Project[] = [
     ],
     types: ["Software", "Biomedical"],
     tags: ["Security", "System Design", "Healthcare"],
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDjfBBea_6oiIJl8EJnojU9e7al-704r9Uqq-pxKrC95EJXrfEfNdMgVtoPmdWcVT_nOjMJeEhmqK5x_ejjp6SMhSQzGsltr2AymNFf0OQaJgWG4tccRqdIOeAZWCgzZ-j8iVLZqiWyMUUc_RtE2Cmaeu6kl4-FnPMIf9rFD4I_Obip2CQlckCcdnC3cXaxMqxJysLetDbwU3ndyzwrJqU00uitHM5eAyLqtd5M6-zFNfRnAsA2lk6Pk_hYQnvkR4swSzwdBQjihMpd",
+    imageUrl: HOSPITAL_SYSTEM_PROJ_IMAGE,
     altText: "Secure Access System",
     href: "https://sites.google.com/view/hospital-system-nazmul-audri/home"
   },
@@ -51,9 +64,63 @@ export const PROJECTS: Project[] = [
     ],
     types: ["Software", "Mathematical Model", "Dynamic System"],
     tags: ["Java", "Computer Vision", "Hardware Integration"],
-    imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBfi0aNgZ02Cxgg5O_Nh3n3kVK8jjfeQcEQdFedxsXDS7-vOSHzc3vW_tKiNzl7XLd2PAjnzjXzMy2p_286hFC6eUaLedBP8GgvGB_fzSeTo6b5Fcu_nsRAYokhVcEsVPtw4KQAgnKW9T2YuhQ0yjFM1wjY2DDe_dBwTdp6tX_Rbxl_lztL12x1lPVuwexziP4TOO9Kh_BlKTQoQSsr5lzHEGteKZnbIdGAzeTgu0IuIt_Wot64Eaonvsd5vD8LzrPKYNOeeNgA_Sq8",
+    imageUrl: H2_OPT_PROJ_IMAGE,
     altText: "Data Visualization",
     href: "https://github.com/nazmul057/Electrolytic_Hydrogen_Production_Optimization"
+  },
+  {
+    id: 5,
+    title: "Modeling, Simulation and Dynamic Analysis of Multi-link Suspension using ADAMS",
+    description: [
+      "Modeled, simulated, and analyzed multilink suspension system dynamics",
+      "Utilized MSC ADAMS and ADAMS CARS software platforms",
+      "Key contributions: initial brainstorming, preliminary modeling and testing, literature research, and final simulation validation"
+    ],
+    types: ["Mathematical Model", "Dynamic System"],
+    tags: ["Multibody Dynamics", "MSC ADAMS", "MATLAB"],
+    imageUrl: MULTILINK_SUSPENSION_PROJ_IMAGE,
+    altText: "Dynamics Project",
+    href: "https://drive.google.com/file/d/1LoOuh2LkyrvIoSl2xS5CWbNvG82g7lPp/view"
+  },
+  {
+    id: 6,
+    title: "Data Acquisition Through USB",
+    description: [
+      "Developed a Windows desktop application from scratch to communicate with external devices via USB protocol. The project involved in-depth study of USB communication technology and implementation of a custom user interface using Windows Presentation Foundation (WPF) framework.",
+      "Independent project completed during internship"
+    ],
+    types: ["Mechatronics", "Software", "Biomedical"],
+    tags: ["USB", "C#", "WPF"],
+    imageUrl: DAQ_PROJ_IMAGE,
+    altText: "Windows Software",
+    href: "https://sites.google.com/view/aa-daqusb/home"
+  },
+  {
+    id: 7,
+    title: "Assistive Wearable Device for Peripheral Vision Loss",
+    description: [
+      "Prototype to assist individuals with peripheral vision loss.",
+      "Intersection of biomedical and mechatronic domains.",
+      "Carried out circuit design, algorithm development, microcontroller programming, and QFD management.",
+      "Project from Systems Design Workshop course."
+    ],
+    types: ["Mechatronics", "Software", "Biomedical"],
+    tags: ["Lidar", "Microcontrollers", "Real-time Mapping"],
+    imageUrl: PERIPHERAL_VISION_LOSS_PROJ_IMAGE,
+    altText: "Mechatronic Systems",
+    href: "https://sites.google.com/view/aa-project-awdpvl/home"
+  },
+  {
+    id: 8,
+    title: "Blender Car Design",
+    description: [
+      "As a personal hobby, I designed a car in Blender based on my own creative vision."
+    ],
+    types: ["3D Design"],
+    tags: ["Blender", "DaVinci Resolve"],
+    imageUrl: BLENDER_CAR_PROJ_IMAGE,
+    altText: "Car Design",
+    href: "https://www.youtube.com/watch?v=uTKwdIGYJB4"
   }
 ];
 

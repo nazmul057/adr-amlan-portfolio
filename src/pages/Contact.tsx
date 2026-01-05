@@ -1,15 +1,18 @@
 import React from 'react';
-import { Mail, Linkedin, Github } from 'lucide-react';
+// import { Mail } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
+
+import { EMAIL_ADDRESS_AA, PHONE_NUMBER_AA, GITHUB_URL_AA, LINKEDIN_URL_AA } from "@/constants";
 
 const Contact: React.FC = () => {
   return (
     <div className="flex flex-col gap-12">
         <div className="flex flex-col gap-3">
-            <h1 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl">
+            <h1 className="text-2xl font-black leading-tight tracking-tight text-white sm:text-4xl">
                 Get In Touch
             </h1>
-            <p className="max-w-2xl text-lg text-white/60">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out for collaborations or job opportunities.
+            <p className="max-w-2xl text-base text-white/60">
+                I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out for collaborations or job opportunities.
             </p>
         </div>
 
@@ -62,31 +65,40 @@ const Contact: React.FC = () => {
                 <div>
                     <h3 className="mb-6 text-lg font-bold text-white">Connect with me</h3>
                     <div className="flex flex-col gap-4">
-                        <a href="#" className="flex items-center gap-4 rounded-xl bg-white/5 p-4 transition-colors hover:bg-white/10 group">
+                        <a href={LINKEDIN_URL_AA} className="flex items-center gap-4 rounded-xl bg-white/5 p-4 transition-colors hover:bg-white/10 group">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-primary">
-                                <Linkedin size={20} />
+                                <FaGithub size={20} />
                             </div>
                             <div>
                                 <p className="font-bold text-white">LinkedIn</p>
-                                <p className="text-sm text-white/50">/in/johndoe</p>
+                                <p className="text-sm text-white/50">/in/amlan-audri/</p>
+                            </div>
+                        </a>
+                        <a href={GITHUB_URL_AA} className="flex items-center gap-4 rounded-xl bg-white/5 p-4 transition-colors hover:bg-white/10 group">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-primary">
+                                <FaLinkedin size={20} />
+                            </div>
+                            <div>
+                                <p className="font-bold text-white">GitHub</p>
+                                <p className="text-sm text-white/50">@nazmul057</p>
+                            </div>
+                        </a>
+                        <a href={`mailto:${EMAIL_ADDRESS_AA}`} className="flex items-center gap-4 rounded-xl bg-white/5 p-4 transition-colors hover:bg-white/10 group">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-primary">
+                                <FaEnvelope size={20} />
+                            </div>
+                            <div>
+                                <p className="font-bold text-white">Email</p>
+                                <p className="text-sm text-white/50">{EMAIL_ADDRESS_AA}</p>
                             </div>
                         </a>
                         <a href="#" className="flex items-center gap-4 rounded-xl bg-white/5 p-4 transition-colors hover:bg-white/10 group">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-primary">
-                                <Github size={20} />
+                                <FaPhone size={20} />
                             </div>
                             <div>
-                                <p className="font-bold text-white">GitHub</p>
-                                <p className="text-sm text-white/50">@johndoe</p>
-                            </div>
-                        </a>
-                        <a href="mailto:hello@example.com" className="flex items-center gap-4 rounded-xl bg-white/5 p-4 transition-colors hover:bg-white/10 group">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors group-hover:bg-primary">
-                                <Mail size={20} />
-                            </div>
-                            <div>
-                                <p className="font-bold text-white">Email</p>
-                                <p className="text-sm text-white/50">hello@example.com</p>
+                                <p className="font-bold text-white">Phone</p>
+                                <p className="text-sm text-white/50">{PHONE_NUMBER_AA}</p>
                             </div>
                         </a>
                     </div>

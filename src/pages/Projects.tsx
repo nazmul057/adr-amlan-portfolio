@@ -13,11 +13,10 @@ const Projects: React.FC = () => {
     "Machine Learning",
     "Mathematical Model",
     "Mechatronics",
-    "Backend"
+    "Backend",
   ];
 
-  const [filter, setFilter] =
-    useState<(typeof categories)[number]>("All");
+  const [filter, setFilter] = useState<(typeof categories)[number]>("All");
 
   const filteredProjects = useMemo(() => {
     if (filter === "All") return PROJECTS;
@@ -34,7 +33,8 @@ const Projects: React.FC = () => {
           My Work
         </h1>
         <p className="max-w-2xl text-lg text-white/60">
-          A selection of projects spanning software, mechatronics, data, biomedical, and AI.
+          A selection of projects spanning software, mechatronics, data,
+          biomedical, and AI.
         </p>
       </div>
 
@@ -63,8 +63,10 @@ const Projects: React.FC = () => {
             href={project.href}
             target="_blank"
             rel="noreferrer"
-            className="group flex flex-col gap-4 rounded-xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl"
+            className="group flex flex-col gap-4 rounded-xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary/60"
+            aria-label={`Open project: ${project.title}`}
           >
+            {/* Image */}
             <div className="overflow-hidden rounded-lg">
               <div
                 className="aspect-video w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
@@ -73,44 +75,65 @@ const Projects: React.FC = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-3 p-2">
-              <div className="flex flex-wrap items-center gap-2">
-                <h3 className="mr-auto text-lg font-bold text-white group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
+            {/* Content */}
+            <div className="flex h-full flex-col p-2">
+              {/* Top section */}
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="mr-auto text-lg font-bold text-white transition-colors group-hover:text-primary">
+                    {project.title}
+                  </h3>
 
-                {/* Multiple type chips */}
-                {project.types.map((type) => (
-                  <span
-                    key={type}
-                    className="rounded-full bg-white/10 px-2 py-1 text-xs font-medium text-white/70"
-                  >
-                    {type}
-                  </span>
-                ))}
+                  {/* Type chips */}
+                  {project.types.map((type) => (
+                    <span
+                      key={type}
+                      className="rounded-full bg-white/10 px-2 py-1 text-xs font-medium text-white/70"
+                    >
+                      {type}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Bullet description */}
+                <ul className="space-y-1 text-sm text-white/60">
+                  {project.description.map((item, idx) => (
+                    <li
+                      key={`${project.id}-desc-${idx}`}
+                      className="flex gap-2"
+                    >
+                      <span className="mt-[2px] text-primary/80">
+                        {BULLET}
+                      </span>
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              {/* Bullet description */}
-              <ul className="space-y-1 text-sm text-white/60">
-                {project.description.map((item, idx) => (
-                  <li key={idx} className="flex gap-2">
-                    <span className="mt-[2px] text-primary/80">
-                      {BULLET}
+              {/* Bottom section pinned to bottom */}
+              <div className="mt-auto flex flex-col gap-3 pt-4">
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-primary/20 px-2 py-1 text-xs font-medium text-purple-200"
+                    >
+                      {tag}
                     </span>
-                    <span className="leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
+                  ))}
+                </div>
 
-              <div className="mt-2 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
+                {/* Explicit redirect indicator */}
+                <div className="flex justify-end">
                   <span
-                    key={tag}
-                    className="rounded-full bg-primary/20 px-2 py-1 text-xs font-medium text-purple-200"
+                    className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary transition-all group-hover:border-primary group-hover:bg-primary/20"
+                    aria-hidden="true"
                   >
-                    {tag}
+                    View Project <span className="text-base leading-none">↗</span>
                   </span>
-                ))}
+                </div>
               </div>
             </div>
           </a>

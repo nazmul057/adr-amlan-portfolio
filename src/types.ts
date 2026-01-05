@@ -8,7 +8,8 @@ export type ProjectType =
   | "Mathematical Model"
   | "Mechatronics"
   | "Dynamic System"
-  | "Backend";
+  | "Backend"
+  | "3D Design";
 
 export interface Project {
   id: number;
