@@ -292,11 +292,43 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
   }
 ];
 
+
 export const SKILLS: Skill[] = [
-  { category: "Languages", items: ["Python (Django, Flask)", "C#", "Java", "C++", "C"] },
-  { category: "Tools & Platforms", items: ["Docker", "Airflow", "LangGraph", "AWS Data Pipeline", "GCP", "Git"] },
-  { category: "Databases", items: ["MongoDB", "PostgreSQL"] },
-  { category: "Engineering & Design", items: ["MATLAB", "MSC ADAMS", "SolidWorks"] },
-  { category: "Hardware & Embedded", items: ["Raspberry Pi", "Arduino", "PIC Microcontrollers", "I2C Protocol", "MPU6050", "Sensors"] },
-  { category: "OS", items: ["Ubuntu Server", "Ubuntu", "Raspberry Pi OS", "Windows"] }
+  {
+    category: "Languages",
+    icon: "Code2",
+    items: ["Python (Django, Flask)", "C#", "Java", "C++", "C"]
+  },
+  {
+    category: "Tools & Platforms",
+    icon: "Wrench",
+    items: ["Docker", "Airflow", "LangGraph", "AWS Data Pipeline", "GCP", "Git"]
+  },
+  {
+    category: "Databases",
+    icon: "Database",
+    items: ["MongoDB", "PostgreSQL"]
+  },
+  {
+    category: "Engineering & Design",
+    icon: "Boxes",
+    items: ["MATLAB", "MSC ADAMS", "SolidWorks"]
+  },
+  {
+    category: "Hardware & Embedded",
+    icon: "Cpu",
+    items: [
+      "Raspberry Pi",
+      "Arduino",
+      "PIC Microcontrollers",
+      "I2C Protocol",
+      "MPU6050",
+      "Sensors"
+    ]
+  },
+  {
+    category: "OS",
+    icon: "Monitor",
+    items: ["Ubuntu Server", "Ubuntu", "Raspberry Pi OS", "Windows"]
+  }
 ];

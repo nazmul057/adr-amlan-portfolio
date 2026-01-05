@@ -47,7 +47,8 @@ export interface ExperienceItem {
   orgDesc?: string; // short 1–2 line description
 }
 
-export interface Skill {
+export type Skill = {
   category: string;
+  icon: string;
   items: string[];
-}
+};
