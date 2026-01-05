@@ -7,14 +7,14 @@ export const LINKEDIN_URL_AA = "https://www.linkedin.com/in/amlan-audri/";
 export const GITHUB_URL_AA = "https://github.com/nazmul057";
 
 
-import QU_ECG_PROJ_IMAGE from "@/supp_dcs/project_card_images/qatar_ecg.png";
-import PERIPHERAL_VISION_LOSS_PROJ_IMAGE from "@/supp_dcs/project_card_images/peripheral_vision_loss.png";
-import NCV_PROJ_IMAGE from "@/supp_dcs/project_card_images/ncv.png";
-import MULTILINK_SUSPENSION_PROJ_IMAGE from "@/supp_dcs/project_card_images/multilink_suspension.png";
-import HOSPITAL_SYSTEM_PROJ_IMAGE from "@/supp_dcs/project_card_images/hospital_system.png";
-import H2_OPT_PROJ_IMAGE from "@/supp_dcs/project_card_images/h2_optimization.png";
-import DAQ_PROJ_IMAGE from "@/supp_dcs/project_card_images/daq.png";
-import BLENDER_CAR_PROJ_IMAGE from "@/supp_dcs/project_card_images/blender_car.png";
+import ECG_BACKEND_PROJ_IMAGE from "@/supp_dcs/project_card_images/ecg_backend.webp";
+import PERIPHERAL_VISION_LOSS_PROJ_IMAGE from "@/supp_dcs/project_card_images/peripheral_vision_loss.webp";
+import NCV_PROJ_IMAGE from "@/supp_dcs/project_card_images/ncv.webp";
+import MULTILINK_SUSPENSION_PROJ_IMAGE from "@/supp_dcs/project_card_images/multilink_suspension.webp";
+import HOSPITAL_SYSTEM_PROJ_IMAGE from "@/supp_dcs/project_card_images/hospital_system.webp";
+import H2_OPT_PROJ_IMAGE from "@/supp_dcs/project_card_images/h2_optimization.webp";
+import DAQ_PROJ_IMAGE from "@/supp_dcs/project_card_images/daq.webp";
+import BLENDER_CAR_PROJ_IMAGE from "@/supp_dcs/project_card_images/blender_car.webp";
 
 // Projects derived from Professional Experience for display purposes
 export const PROJECTS: Project[] = [
@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
     ],
     types: ["Software", "Biomedical", "Backend"],
     tags: ["Python", "Flask", "MongoDB", "GCP"],
-    imageUrl: QU_ECG_PROJ_IMAGE,
+    imageUrl: ECG_BACKEND_PROJ_IMAGE,
     altText: "ECG Signal Analysis",
     href: "https://sites.google.com/view/aa-real-time-ecg-analysis/home"
   },
