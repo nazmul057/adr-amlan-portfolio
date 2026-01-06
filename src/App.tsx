@@ -8,6 +8,8 @@ import Education from './pages/Education';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 
+import ContactSent from './pages/ContactSent';
+
 // ScrollToTop component to handle scroll restoration on route change
 const ScrollToTop = () => {
     React.useEffect(() => {
@@ -28,6 +30,9 @@ const App: React.FC = () => {
           <Route path="/education" element={<Education />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
+
+          <Route path="/contact/sent" element={<ContactSent />} />
+
         </Routes>
       </Layout>
     </HashRouter>
