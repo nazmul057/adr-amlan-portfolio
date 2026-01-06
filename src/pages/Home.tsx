@@ -8,7 +8,7 @@ import { EMAIL_ADDRESS_AA, PHONE_NUMBER_AA, GITHUB_URL_AA, LINKEDIN_URL_AA } fro
 import PROFILE_IMAGE_AA from "@/supp_dcs/images/Profile_Picture_AA.jpg";
 // export const PROFILE_IMAGE_URL_AA = ProfileImgAA;
 
-import ABSTRACT_NETWORK_IMG from "@/supp_dcs/images/homepage_abstract_improved.png";
+import ABSTRACT_NETWORK_IMG from "@/supp_dcs/images/homepage_abstract.webp";
 // export const ABSTRACT_NETWORK_IMAGE = AbsNetPath;
 
 const Home: React.FC = () => {

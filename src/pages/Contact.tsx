@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
                 name="email"
                 required
                 className="h-14 w-full rounded-lg border border-white/20 bg-background-dark/50 px-4 text-white placeholder-white/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50"
-                placeholder="Enter your email address"
+                placeholder="Enter your email"
               />
             </label>
           </div>
