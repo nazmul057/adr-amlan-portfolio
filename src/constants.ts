@@ -19,7 +19,7 @@ import BLENDER_CAR_PROJ_IMAGE from "@/supp_dcs/project_card_images/blender_car.w
 // Projects derived from Professional Experience for display purposes
 export const PROJECTS: Project[] = [
   {
-    id: 1,
+    id: 3,
     title: "Real-Time ECG Analysis Backend",
     description: [
       "Built a backend using Python (Flask) and MongoDB supporting continuous data flow, live visualization, and storage for a Holter monitoring project."
@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
     href: "https://sites.google.com/view/aa-real-time-ecg-analysis/home"
   },
   {
-    id: 2,
+    id: 4,
     title: "Automated NCV Testing Device",
     description: [
       "Designed and implemented real-time signal processing algorithms in C# and automated USB-based communication."
@@ -43,19 +43,19 @@ export const PROJECTS: Project[] = [
     href: "https://sites.google.com/view/aa-ncv-project/home"
   },
   {
-    id: 3,
+    id: 2,
     title: "Medical Data Storage and Management System for Hospitals",
     description: [
       "Designed secure user access control with distinct roles (Doctors, Patients, Admins) for a clinical research platform, ensuring data privacy and compliance."
     ],
     types: ["Software", "Biomedical"],
-    tags: ["Security", "System Design", "Healthcare"],
+    tags: ["Cloud System", "Data Architecture", "Healthcare"],
     imageUrl: HOSPITAL_SYSTEM_PROJ_IMAGE,
     altText: "Secure Access System",
     href: "https://sites.google.com/view/hospital-system-nazmul-audri/home"
   },
   {
-    id: 4,
+    id: 1,
     title: "Optimizing Hydrogen Production Efficiency at Fuel Stations",
     description: [
       "Independent master's course project completed over two months",

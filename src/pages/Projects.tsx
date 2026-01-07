@@ -17,11 +17,17 @@ const Projects: React.FC = () => {
   ];
 
   const [filter, setFilter] = useState<(typeof categories)[number]>("All");
-
+  
   const filteredProjects = useMemo(() => {
-    if (filter === "All") return PROJECTS;
-    return PROJECTS.filter((p) => p.types.includes(filter));
+    const list =
+      filter === "All"
+        ? PROJECTS
+        : PROJECTS.filter((p) => p.types.includes(filter));
+  
+    // Sort by id ascending (handles number or numeric-string ids)
+    return [...list].sort((a, b) => Number(a.id) - Number(b.id));
   }, [filter]);
+  
 
   const BULLET = "⟡";
 

@@ -53,12 +53,33 @@ const Experience: React.FC = () => {
                   {/* Header Row: organization + period */}
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                     <div className="min-w-0">
+                    
+                    {/* Title + engagement */}
+                    <div className="mt-3 flex flex-wrap items-center gap-2">
+                        <h3 className="text-xl font-bold text-white">{item.title}</h3>
+
+                        {item.engagement && (
+                          <span
+                            className="
+                              flex h-7 items-center rounded-lg
+                              bg-primary/5
+                              px-3 text-xs font-medium
+                              text-purple-500
+                              border border-primary/25
+                              transition-colors
+                              hover:text-purple-300 hover:bg-primary/10
+                            "
+                          >
+                            {item.engagement}
+                          </span>
+                        )}
+                      </div>
                       {/* Organization */}
-                      <h3 className="text-xl font-bold text-white">{item.organization}</h3>
+                      <p className="mt-2 text-lg font-medium text-purple-500">{item.organization}</p>
 
                       {/* Organization blurb + link */}
                       {(item.orgDesc || item.link) && (
-                        <div className="mt-2 flex flex-col gap-2">
+                        <div className="flex flex-col gap-2">
                           {item.orgDesc && (
                             <p className="max-w-2xl text-sm leading-relaxed text-white/60">
                               {item.orgDesc}
@@ -86,27 +107,7 @@ const Experience: React.FC = () => {
                           )}
                         </div>
                       )}
-
-                      {/* Title + engagement */}
-                      <div className="mt-3 flex flex-wrap items-center gap-2">
-                        <p className="text-lg font-medium text-primary">{item.title}</p>
-
-                        {item.engagement && (
-                          <span
-                            className="
-                              flex h-7 items-center rounded-lg
-                              bg-primary/5
-                              px-3 text-xs font-medium
-                              text-purple-500
-                              border border-primary/25
-                              transition-colors
-                              hover:text-purple-300 hover:bg-primary/10
-                            "
-                          >
-                            {item.engagement}
-                          </span>
-                        )}
-                      </div>
+                      
                     </div>
 
                     {/* Period */}
