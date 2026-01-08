@@ -136,8 +136,10 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     link: "https://www.linkedin.com/company/infai-llc/",
     engagement: "Part-time",
     details:[
-      "Design of a Knowledge Graph agnostic system for interacting with different Knowledge Graphs to perform queries using a novel path aware Markhov Chain traversal algorithm.",
-      "Custom train and design of a small language model for instruction oriented chat interactions."
+      "Contributin in a Knowledge Graph agnostic system for interacting with different Knowledge Graphs to perform queries using a novel path aware Markhov Chain traversal algorithm.",
+      "Designing and training of a small language model for instruction oriented chat interactions.",
+      "Optimizing Inference Engines.",
+      "Utilizing Knowldege Graphs for precise and accurate answers from Agentic AI Systems."
     ],
     tags: ["Python", "Langgraph", "PyTorch", "Model Context Protocol", "System Design"]
   },
