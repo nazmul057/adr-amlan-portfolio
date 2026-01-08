@@ -169,7 +169,6 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     type: "work",
     details: [
       "Designed and implemented real-time signal analysis and decision-making algorithms in C# to automate 12-lead ECG data acquisition.",
-      "Contributed to maintaining and updating engineering requirements and system specifications for an ECG telemedicine platform.",
       "Improved USB-based communication with a biomedical device for Nerve Conduction Velocity (NCV) measurement, enhancing automation, user experience, and testing efficiency.",
       "Developed automated report generation features from NCV test results within the C# application.",
       "Collaborated with multidisciplinary teams to define system scope, align requirements, and ensure smooth hardware-software integration.",
