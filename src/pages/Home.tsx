@@ -82,11 +82,14 @@ const Home: React.FC = () => {
           </div>
 
           <div className="flex flex-1 justify-center md:justify-end">
-            <div
-              className="aspect-square w-full max-w-[260px] rounded-full bg-cover bg-center shadow-xl ring-1 ring-white/10"
-              style={{ backgroundImage: `url(${PROFILE_IMAGE_AA})` }}
-              aria-label="Profile image"
-            />
+            <div className="aspect-square w-full max-w-[260px] rounded-full overflow-hidden shadow-xl ring-1 ring-white/10">
+              <img
+                src={PROFILE_IMAGE_AA}
+                alt="Profile"
+                className="w-full h-full object-cover object-[center_30%]"
+              />
+            </div>
+
           </div>
         </div>
       </section>
