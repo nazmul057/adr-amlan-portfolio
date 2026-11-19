@@ -1,0 +1,10 @@
+# Normalise line endings so checkouts on Windows and Linux agree.
+# Without this the whole tree shows as modified after switching platforms.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.pdf binary

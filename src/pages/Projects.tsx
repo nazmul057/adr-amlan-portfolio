@@ -1,148 +1,121 @@
-// Projects.tsx
+import React, { useMemo, useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
-import React, { useMemo, useState } from "react";
-import { PROJECTS } from "../constants";
-import type { ProjectType } from "../types";
+import { PROJECTS } from '../constants';
+import type { ProjectType } from '../types';
+import ProjectArt from '@/components/ProjectArt';
+import PageHeader from '@/components/PageHeader';
+import Reveal from '@/components/Reveal';
+
+type Filter = 'All' | ProjectType;
 
 const Projects: React.FC = () => {
-  const categories: Array<"All" | ProjectType> = [
-    "All",
-    "Software",
-    "Data Engineering",
-    "Biomedical",
-    "Machine Learning",
-    "Mathematical Model",
-    "Mechatronics",
-    "Backend",
-  ];
+  // Categories are derived from the data, so a filter can never come up empty.
+  const categories = useMemo<Filter[]>(() => {
+    const seen = new Set<ProjectType>();
+    PROJECTS.forEach((p) => p.types.forEach((t) => seen.add(t)));
+    return ['All', ...Array.from(seen).sort()];
+  }, []);
 
-  const [filter, setFilter] = useState<(typeof categories)[number]>("All");
-  
-  const filteredProjects = useMemo(() => {
-    const list =
-      filter === "All"
-        ? PROJECTS
-        : PROJECTS.filter((p) => p.types.includes(filter));
-  
-    // Sort by id ascending (handles number or numeric-string ids)
-    return [...list].sort((a, b) => Number(a.id) - Number(b.id));
+  const [filter, setFilter] = useState<Filter>('All');
+
+  const filtered = useMemo(() => {
+    const list = filter === 'All' ? PROJECTS : PROJECTS.filter((p) => p.types.includes(filter));
+    return [...list].sort((a, b) => a.id - b.id);
   }, [filter]);
-  
-
-  const BULLET = "⟡";
 
   return (
     <div className="flex flex-col gap-10">
-      {/* Header */}
-      <div className="flex flex-col gap-4">
-        <h1 className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-3xl font-black tracking-tight text-transparent sm:text-4xl">
-          My Work
-        </h1>
-        <p className="max-w-2xl text-lg text-white/60">
-          A selection of projects spanning software, mechatronics, data,
-          biomedical, and AI.
-        </p>
+      <PageHeader
+        eyebrow="Portfolio"
+        title="My Work"
+        lead="A selection of projects spanning software, research systems, mechatronics, biomedical engineering, and AI."
+      />
+
+      {/* Filters */}
+      <div className="flex flex-wrap gap-2.5">
+        {categories.map((cat) => {
+          const active = filter === cat;
+          const count =
+            cat === 'All'
+              ? PROJECTS.length
+              : PROJECTS.filter((p) => p.types.includes(cat as ProjectType)).length;
+
+          return (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              aria-pressed={active}
+              className={`flex h-9 items-center gap-2 rounded-full px-4 text-sm font-medium transition-all duration-300 ${
+                active
+                  ? 'bg-linear-to-r from-primary to-[#9333ea] text-white shadow-[0_10px_28px_-12px_rgba(127,19,236,1)]'
+                  : 'border border-white/10 bg-white/[0.04] text-white/65 hover:border-white/20 hover:bg-white/10 hover:text-white'
+              }`}
+            >
+              {cat}
+              <span className={`text-[0.7rem] ${active ? 'text-white/70' : 'text-white/35'}`}>
+                {count}
+              </span>
+            </button>
+          );
+        })}
       </div>
 
-      {/* Filter Pills */}
-      <div className="flex flex-wrap gap-3">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setFilter(cat)}
-            className={`flex h-9 items-center rounded-full px-5 text-sm font-medium transition-all ${
-              filter === cat
-                ? "bg-primary text-white shadow-lg shadow-primary/25"
-                : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+      {/* Grid */}
+      <div className="grid gap-6 sm:grid-cols-2">
+        {filtered.map((project, i) => (
+          <Reveal key={project.id} delay={(i % 4) * 80}>
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noreferrer"
+              className="surface surface--lift group flex h-full flex-col gap-4 p-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/70"
+              aria-label={`Open project: ${project.title}`}
+            >
+              <ProjectArt art={project.art} label={project.altText} />
 
-      {/* Projects Grid */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredProjects.map((project) => (
-          <a
-            key={project.id}
-            href={project.href}
-            target="_blank"
-            rel="noreferrer"
-            className="group flex flex-col gap-4 rounded-xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary/60"
-            aria-label={`Open project: ${project.title}`}
-          >
-            {/* Image */}
-            <div className="overflow-hidden rounded-lg">
-              <div
-                className="aspect-video w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                style={{ backgroundImage: `url("${project.imageUrl}")` }}
-                aria-label={project.altText}
-              />
-            </div>
+              <div className="flex flex-1 flex-col gap-3 p-1">
+                <h3 className="text-base font-bold leading-snug text-white transition-colors group-hover:text-primary-soft">
+                  {project.title}
+                </h3>
 
-            {/* Content */}
-            <div className="flex h-full flex-col p-2">
-              {/* Top section */}
-              <div className="flex flex-col gap-3">
-                <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="mr-auto text-lg font-bold text-white transition-colors group-hover:text-primary">
-                    {project.title}
-                  </h3>
-
-                  {/* Type chips */}
+                <div className="flex flex-wrap gap-1.5">
                   {project.types.map((type) => (
                     <span
                       key={type}
-                      className="rounded-full bg-white/10 px-2 py-1 text-xs font-medium text-white/70"
+                      className="rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-0.5 text-[0.68rem] font-medium text-white/60"
                     >
                       {type}
                     </span>
                   ))}
                 </div>
 
-                {/* Bullet description */}
-                <ul className="space-y-1 text-sm text-white/60">
+                <ul className="space-y-1.5 text-[0.82rem] leading-relaxed text-white/55">
                   {project.description.map((item, idx) => (
-                    <li
-                      key={`${project.id}-desc-${idx}`}
-                      className="flex gap-2"
-                    >
-                      <span className="mt-[2px] text-primary/80">
-                        {BULLET}
-                      </span>
-                      <span className="leading-relaxed">{item}</span>
+                    <li key={idx} className="flex gap-2.5">
+                      <span className="marker-dot !mt-[0.45rem]" />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
 
-              {/* Bottom section pinned to bottom */}
-              <div className="mt-auto flex flex-col gap-3 pt-4">
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-primary/20 px-2 py-1 text-xs font-medium text-purple-200"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <div className="mt-auto flex flex-col gap-3 pt-3">
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="chip !text-[0.68rem]">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                {/* Explicit redirect indicator */}
-                <div className="flex justify-end">
-                  <span
-                    className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary transition-all group-hover:border-primary group-hover:bg-primary/20"
-                    aria-hidden="true"
-                  >
-                    View Project <span className="text-base leading-none">↗</span>
+                  <span className="inline-flex items-center gap-1.5 self-end text-sm font-medium text-primary-soft transition-all duration-300 group-hover:gap-2.5 group-hover:text-accent">
+                    View Project
+                    <ArrowUpRight size={16} />
                   </span>
                 </div>
               </div>
-            </div>
-          </a>
+            </a>
+          </Reveal>
         ))}
       </div>
     </div>

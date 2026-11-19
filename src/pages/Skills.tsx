@@ -1,10 +1,21 @@
-import React from "react";
-import { SKILLS } from "../constants";
-import { Code2, Wrench, Database, Cpu, Monitor, Boxes, Terminal } from "lucide-react";
+import React from 'react';
+import {
+  Code2,
+  Wrench,
+  Database,
+  Cpu,
+  Monitor,
+  Boxes,
+  Terminal,
+  Brain,
+  Workflow,
+  Rocket
+} from 'lucide-react';
 
-/* ---------------------------------------
-   Local icon map (page-scoped)
---------------------------------------- */
+import { SKILLS } from '../constants';
+import PageHeader from '@/components/PageHeader';
+import Reveal from '@/components/Reveal';
+
 const SKILL_ICON_MAP: Record<string, React.ElementType> = {
   Code2,
   Wrench,
@@ -12,77 +23,86 @@ const SKILL_ICON_MAP: Record<string, React.ElementType> = {
   Cpu,
   Monitor,
   Boxes,
+  Brain,
+  Workflow,
   Terminal
 };
 
-const Skills: React.FC = () => {
-  return (
-    <div className="flex flex-col gap-10">
-      <div className="flex flex-col gap-2">
-        <h1 className="text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl">
-          Technical Skills
-        </h1>
-        <p className="text-lg text-white/60">
-          A comprehensive list of my technical expertise and tools.
-        </p>
-      </div>
+const LEARNING = [
+  'Agentic AI',
+  'LLMs',
+  'Knowledge Graphs',
+  'Rust',
+  'Advanced System Architecture'
+];
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {SKILLS.map((skillGroup) => {
-          const Icon =
-            SKILL_ICON_MAP[skillGroup.icon] ??
-            SKILL_ICON_MAP["Terminal"];
+const Skills: React.FC = () => (
+  <div className="flex flex-col gap-14">
+    <PageHeader
+      eyebrow="Toolkit"
+      title="Technical Skills"
+      lead="Languages, platforms, and instruments I work with across research and engineering."
+    />
 
-          return (
-            <div
-              key={skillGroup.category}
-              className="flex flex-col gap-6 rounded-2xl border border-white/10 bg-white/5 p-6 transition-all hover:border-primary/30 hover:bg-white/[0.07]"
-            >
-              <div className="flex items-center gap-4 border-b border-white/10 pb-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <Icon size={24} />
-                </div>
-                <h2 className="text-xl font-bold text-white">
-                  {skillGroup.category}
-                </h2>
+    <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {SKILLS.map((group, i) => {
+        const Icon = SKILL_ICON_MAP[group.icon] ?? Terminal;
+
+        return (
+          <Reveal key={group.category} delay={i * 60}>
+            <div className="surface surface--lift group flex h-full flex-col gap-5 p-6">
+              <div className="flex items-center gap-3.5 border-b border-white/10 pb-4">
+                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-linear-to-br from-primary/25 to-primary/5 text-primary-soft transition-transform duration-500 group-hover:scale-110">
+                  <Icon size={21} />
+                </span>
+                <h2 className="text-base font-bold leading-tight text-white">{group.category}</h2>
               </div>
 
               <div className="flex flex-wrap gap-2">
-                {skillGroup.items.map((skill) => (
-                  <div
+                {group.items.map((skill) => (
+                  <span
                     key={skill}
-                    className="flex items-center justify-center rounded-lg bg-background-dark px-4 py-3 text-sm font-medium text-white/80 transition-all hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/25 cursor-default"
+                    className="rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-[0.8rem] font-medium text-white/75 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/15 hover:text-white"
                   >
                     {skill}
-                  </div>
+                  </span>
                 ))}
               </div>
             </div>
-          );
-        })}
-      </div>
-
-      {/* Additional Context Section */}
-      <div className="mt-8 rounded-2xl border border-white/10 bg-gradient-to-r from-background-dark to-white/5 p-8">
-        <h3 className="mb-4 text-xl font-bold text-white">
-          Continuous Learning
-        </h3>
-        <p className="text-white/70 max-w-3xl leading-relaxed">
-          Technology is constantly evolving, and so am I. I am currently
-          expanding my knowledge in
-          <span className="text-purple-600 font-medium"> Agentic AI</span>,
-          <span className="text-purple-600 font-medium"> LLM</span>,
-          <span className="text-purple-600 font-medium"> Knowledge Graphs</span>,
-          <span className="text-purple-600 font-medium"> Rust</span>, and
-          <span className="text-purple-600 font-medium">
-            {" "}
-            Advanced System Architecture
-          </span>
-          .
-        </p>
-      </div>
+          </Reveal>
+        );
+      })}
     </div>
-  );
-};
+
+    {/* Continuous learning */}
+    <Reveal>
+      <div className="surface relative overflow-hidden p-8 lg:p-10">
+        <div
+          className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full blur-3xl"
+          style={{ background: 'radial-gradient(circle, rgba(127,19,236,0.35), transparent 70%)' }}
+          aria-hidden="true"
+        />
+        <div className="relative flex flex-col gap-5">
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary-soft">
+              <Rocket size={19} />
+            </span>
+            <h3 className="text-xl font-bold text-white">Continuous Learning</h3>
+          </div>
+          <p className="max-w-3xl leading-relaxed text-white/65">
+            Technology is constantly evolving, and so am I. I am currently expanding my knowledge in:
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {LEARNING.map((topic) => (
+              <span key={topic} className="chip px-3.5 py-2 text-sm">
+                {topic}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </Reveal>
+  </div>
+);
 
 export default Skills;
