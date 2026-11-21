@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
       <div
         className={`mx-auto max-w-[1040px] rounded-2xl border px-5 py-3 transition-all duration-500 ${
           scrolled
-            ? 'border-white/15 bg-background-dark/85 shadow-[0_18px_50px_-24px_rgba(127,19,236,0.85)] backdrop-blur-xl'
+            ? 'border-white/15 bg-background-dark/95 shadow-[0_18px_50px_-24px_rgba(127,19,236,0.85)] backdrop-blur-xl'
             : 'border-white/10 bg-background-dark/55 backdrop-blur-md'
         }`}
       >

@@ -12,6 +12,10 @@
   --color-primary-hover: #6b11c7;
   --color-primary-soft: #a855f7;
   --color-accent: #e879f9;
+  /* Lighter purple for copy that would otherwise sit at exactly the colour of
+     the ambient mesh (--color-primary-soft). Keeps organisation names in the
+     same family without the lattice appearing to run through the words. */
+  --color-primary-tint: #d8b4fe;
 
   /* Helix layer of the ambient field — a cool green reads as the biological
      half of the composition against the purple mesh. Swap these two to
@@ -53,6 +57,17 @@
        Raise toward 1 for more contrast, lower for more background. */
     --surface-alpha: 0.74;
     --plate-alpha: 0.82;
+
+    /* Strength of the quiet band behind the content column (.ambient__scrim).
+       0 shows the field at full strength everywhere; 1 hides it behind the
+       copy entirely. The field is never dimmed in the margins.
+
+       Two values, picked per route in Layout.tsx. Most pages put their copy
+       on cards that carry their own backing, so the band only has to take the
+       edge off and the field stays legible. Experience and Education are
+       mostly running text directly over the field and need the full band. */
+    --scrim-alpha: 0.22;
+    --scrim-alpha-text: 0.55;
   }
 
   * {
@@ -206,6 +221,33 @@
   height: 100%;
 }
 
+/* Quiet band behind the content column. The field keeps its full strength in
+   the margins and is only muted where running text sits, so the background
+   still reads as one moving field rather than a panel under the copy. Mounted
+   last inside .ambient, so it paints above the canvas and below the content
+   layer (z-10). Strength is --scrim-alpha on :root. */
+.ambient__scrim {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  /* Wider than a phone viewport, so the feathered edges fall outside it and
+     full-bleed copy there still gets the full strength. */
+  width: min(calc(100% + 160px), 1320px);
+  transform: translateX(-50%);
+  background: rgba(25, 16, 34, var(--scrim-alpha));
+  /* Eases rather than snaps when a route change swaps the strength. */
+  transition: background 0.5s var(--ease);
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Routes whose copy sits directly on the field rather than on cards. */
+.ambient__scrim[data-density='text'] {
+  background: rgba(25, 16, 34, var(--scrim-alpha-text));
+}
+
 /* ---------- Scroll reveal ----------------------------------- */
 
 .reveal {
@@ -256,9 +298,10 @@
   pointer-events: none;
 }
 
-/* Readable backing for text with no card of its own. The radial mask makes
-   it densest behind the copy and fades to nothing at the edges, so it never
-   reads as a box — only as the background quietening down. */
+/* Readable backing for text with no card of its own. Two intersected linear
+   masks feather it to nothing at every edge, so it never reads as a box —
+   only as the background quietening down. A radial mask cannot do this: on a
+   tall block it never reaches transparent before the edge. */
 .plate {
   position: relative;
   isolation: isolate;
@@ -284,6 +327,22 @@
   mask-composite: intersect;
   -webkit-mask-composite: source-in;
   pointer-events: none;
+}
+
+/* A real backing for secondary content, with none of .surface's top highlight
+   so it still reads as subordinate. De-emphasis comes from type size, weight
+   and opacity — not from letting the background through the card. */
+.surface--quiet {
+  position: relative;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(25, 16, 34, var(--surface-alpha));
+  backdrop-filter: blur(10px);
+  transition: border-color 0.4s var(--ease);
+}
+
+.surface--quiet:hover {
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 /* Centred blocks (the footer) fade evenly on both sides instead. */

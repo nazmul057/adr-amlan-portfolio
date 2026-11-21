@@ -60,14 +60,14 @@ const TimelineEntry: React.FC<{
               )}
             </div>
 
-            <p className="mt-2 text-lg font-medium text-primary-soft">{item.organization}</p>
+            <p className="mt-2 text-lg font-medium text-primary-tint">{item.organization}</p>
 
             {item.orgDesc && (
-              <p className="mt-1 max-w-2xl text-sm leading-relaxed text-white/55">{item.orgDesc}</p>
+              <p className="mt-1 max-w-2xl text-sm leading-relaxed text-white/70">{item.orgDesc}</p>
             )}
 
             {item.location && (
-              <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-white/45">
+              <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-white/65">
                 <MapPin size={13} /> {item.location}
               </p>
             )}
@@ -85,7 +85,7 @@ const TimelineEntry: React.FC<{
             )}
           </div>
 
-          <span className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 font-mono text-xs text-white/60">
+          <span className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 font-mono text-xs text-white/75">
             {item.period}
           </span>
         </div>
@@ -249,7 +249,7 @@ const Experience: React.FC = () => {
       {secondary.length > 0 && (
         <section className="border-t border-white/[0.07] pt-10">
           <Reveal>
-            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/35">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-white/55">
               Additional Engagements
             </h2>
           </Reveal>
@@ -257,16 +257,16 @@ const Experience: React.FC = () => {
           <div className="mt-5 flex flex-col gap-3">
             {secondary.map((item, i) => (
               <Reveal key={item.id} delay={i * 70}>
-                <details className="group rounded-xl border border-white/[0.07] bg-white/[0.015] transition-colors hover:border-white/15">
+                <details className="surface--quiet group">
                   <summary className="flex cursor-pointer flex-wrap items-center gap-x-3 gap-y-1 p-4">
-                    <span className="text-sm font-medium text-white/65">{item.title}</span>
-                    <span className="text-sm text-white/40">· {item.organization}</span>
+                    <span className="text-sm font-medium text-white/80">{item.title}</span>
+                    <span className="text-sm text-white/60">· {item.organization}</span>
                     {item.engagement && (
-                      <span className="rounded border border-white/10 px-1.5 py-0.5 text-[0.65rem] text-white/35">
+                      <span className="rounded border border-white/10 px-1.5 py-0.5 text-[0.65rem] text-white/60">
                         {item.engagement}
                       </span>
                     )}
-                    <span className="ml-auto flex items-center gap-2 font-mono text-[0.7rem] text-white/30">
+                    <span className="ml-auto flex items-center gap-2 font-mono text-[0.7rem] text-white/55">
                       {item.period}
                       <ChevronDown
                         size={15}
@@ -277,13 +277,13 @@ const Experience: React.FC = () => {
 
                   <div className="border-t border-white/[0.07] px-4 pb-4 pt-3">
                     {item.orgDesc && (
-                      <p className="mb-3 text-xs leading-relaxed text-white/40">{item.orgDesc}</p>
+                      <p className="mb-3 text-xs leading-relaxed text-white/60">{item.orgDesc}</p>
                     )}
                     {item.details && (
-                      <ul className="space-y-2 text-xs leading-relaxed text-white/50">
+                      <ul className="space-y-2 text-xs leading-relaxed text-white/65">
                         {item.details.map((point, idx) => (
                           <li key={idx} className="flex gap-2.5">
-                            <span className="mt-1.5 h-1 w-1 flex-none rounded-full bg-white/25" />
+                            <span className="mt-1.5 h-1 w-1 flex-none rounded-full bg-white/45" />
                             <span>{point}</span>
                           </li>
                         ))}
@@ -294,7 +294,7 @@ const Experience: React.FC = () => {
                         {item.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="rounded border border-white/[0.07] px-2 py-0.5 text-[0.65rem] text-white/35"
+                            className="rounded border border-white/[0.07] px-2 py-0.5 text-[0.65rem] text-white/60"
                           >
                             {tag}
                           </span>
@@ -306,7 +306,7 @@ const Experience: React.FC = () => {
                         href={item.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="mt-3 inline-flex items-center gap-1.5 text-[0.7rem] text-white/35 transition-colors hover:text-white/60"
+                        className="mt-3 inline-flex items-center gap-1.5 text-[0.7rem] text-white/55 transition-colors hover:text-white/85"
                       >
                         {item.orgType ? `Explore ${item.orgType}` : 'Explore'}
                         <ExternalLink size={11} />

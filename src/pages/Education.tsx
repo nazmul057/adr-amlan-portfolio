@@ -52,14 +52,14 @@ const EduEntry: React.FC<{
         <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
           <div className="min-w-0">
             <h3 className="text-xl font-bold tracking-tight text-white">{item.title}</h3>
-            <p className="mt-2 text-lg font-medium text-primary-soft">{item.organization}</p>
+            <p className="mt-2 text-lg font-medium text-primary-tint">{item.organization}</p>
 
             {item.orgDesc && (
-              <p className="mt-1 max-w-2xl text-sm leading-relaxed text-white/55">{item.orgDesc}</p>
+              <p className="mt-1 max-w-2xl text-sm leading-relaxed text-white/70">{item.orgDesc}</p>
             )}
 
             {item.location && (
-              <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-white/45">
+              <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-white/65">
                 <MapPin size={13} /> {item.location}
               </p>
             )}
@@ -77,7 +77,7 @@ const EduEntry: React.FC<{
             )}
           </div>
 
-          <span className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 font-mono text-xs text-white/60">
+          <span className="shrink-0 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 font-mono text-xs text-white/75">
             {item.period}
           </span>
         </div>
