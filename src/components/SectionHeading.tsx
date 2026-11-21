@@ -9,7 +9,7 @@ interface SectionHeadingProps {
 }
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({ eyebrow, title, subtitle, icon }) => (
-  <Reveal className="mb-8 flex flex-col gap-3">
+  <Reveal className="plate mb-8 flex flex-col gap-3">
     {eyebrow && <span className="eyebrow">{eyebrow}</span>}
     <div className="flex items-center gap-3">
       {icon && (

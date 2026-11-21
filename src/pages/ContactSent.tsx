@@ -11,12 +11,14 @@ const ContactSent: React.FC = () => {
         <CheckCircle2 size={38} />
       </span>
 
-      <h1 className="text-gradient text-3xl font-black sm:text-4xl">Message Sent Successfully</h1>
+      <div className="plate flex flex-col items-center gap-5">
+        <h1 className="text-gradient text-3xl font-black sm:text-4xl">Message Sent Successfully</h1>
 
-      <p className="max-w-xl leading-relaxed text-white/65">
-        Thank you for reaching out. Your message has been received, and I will get back to you as
-        soon as possible.
-      </p>
+        <p className="max-w-xl leading-relaxed text-white/65">
+          Thank you for reaching out. Your message has been received, and I will get back to you as
+          soon as possible.
+        </p>
+      </div>
 
       <div className="mt-2 flex flex-wrap justify-center gap-3">
         <button onClick={() => navigate('/')} className="btn btn--primary h-12 px-7 text-sm">

@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import AmbientField from './AmbientField';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -16,6 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="ambient__blob ambient__blob--b" />
         <div className="ambient__blob ambient__blob--c" />
         <div className="ambient__grid" />
+        <AmbientField />
       </div>
 
       <div className="relative z-10 flex min-h-screen flex-col">

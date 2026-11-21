@@ -7,7 +7,7 @@ interface PageHeaderProps {
 }
 
 const PageHeader: React.FC<PageHeaderProps> = ({ eyebrow, title, lead }) => (
-  <header className="flex flex-col gap-4 animate-fade-up">
+  <header className="plate flex flex-col gap-4 animate-fade-up">
     <span className="eyebrow">{eyebrow}</span>
     <h1 className="text-gradient text-4xl font-black leading-[1.08] tracking-tight sm:text-5xl">
       {title}

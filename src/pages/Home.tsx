@@ -5,7 +5,6 @@ import { ArrowRight, MapPin, Mail, Phone, UserRound, FlaskConical } from 'lucide
 
 import TypingAnimation from '@/components/TypingAnimation';
 import Reveal from '@/components/Reveal';
-import { useSpotlight } from '@/hooks/useSpotlight';
 import SectionHeading from '@/components/SectionHeading';
 
 import {
@@ -47,16 +46,13 @@ const FUN_FACTS = [
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
-  const infoCard = useSpotlight<HTMLDivElement>();
-  const summaryCard = useSpotlight<HTMLDivElement>();
-  const factsCard = useSpotlight<HTMLDivElement>();
 
   return (
     <div className="flex flex-col gap-20 md:gap-28">
       {/* ================= Hero ================= */}
       <section className="mt-4 sm:mt-10">
         <div className="flex flex-col-reverse items-center gap-10 md:flex-row md:items-center md:gap-12">
-          <div className="flex flex-1 flex-col gap-7">
+          <div className="plate flex flex-1 flex-col gap-7">
             {/* Availability pill */}
             <div className="flex animate-fade-up">
               <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 text-xs font-medium text-purple-200">
@@ -135,7 +131,7 @@ const Home: React.FC = () => {
         <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
           {/* Info card */}
           <Reveal className="lg:col-span-1">
-            <div ref={infoCard.ref} onPointerMove={infoCard.onPointerMove} className="surface spotlight flex h-fit flex-col gap-6 p-6">
+            <div className="surface flex h-fit flex-col gap-6 p-6">
               <div className="flex flex-col gap-4">
                 <div>
                   <h3 className="eyebrow">Full Name</h3>
@@ -215,7 +211,7 @@ const Home: React.FC = () => {
           {/* Summary + fun facts */}
           <div className="flex flex-col gap-6 lg:col-span-2">
             <Reveal delay={80}>
-              <div ref={summaryCard.ref} onPointerMove={summaryCard.onPointerMove} className="surface spotlight flex flex-col gap-5 p-7 lg:p-9">
+              <div className="surface flex flex-col gap-5 p-7 lg:p-9">
                 <div className="flex items-center gap-3">
                   <FlaskConical size={20} className="text-primary-soft" />
                   <h2 className="text-xl font-bold text-white">Profile Summary</h2>
@@ -241,7 +237,7 @@ const Home: React.FC = () => {
             </Reveal>
 
             <Reveal delay={140}>
-              <div ref={factsCard.ref} onPointerMove={factsCard.onPointerMove} className="surface spotlight flex flex-col gap-5 p-7 lg:p-9">
+              <div className="surface flex flex-col gap-5 p-7 lg:p-9">
                 <h2 className="text-xl font-bold text-white">Fun Facts About Me</h2>
                 <ul className="space-y-4 text-[0.95rem] text-white/70">
                   {FUN_FACTS.map((fact) => (

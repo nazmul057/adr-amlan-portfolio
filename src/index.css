@@ -12,6 +12,12 @@
   --color-primary-hover: #6b11c7;
   --color-primary-soft: #a855f7;
   --color-accent: #e879f9;
+
+  /* Helix layer of the ambient field — a cool green reads as the biological
+     half of the composition against the purple mesh. Swap these two to
+     recolour it: #34d399 emerald, #22d3ee cyan, #f59e0b amber. */
+  --color-helix: #2dd4bf;
+  --color-helix-soft: #99f6e4;
   --color-background-dark: #191022;
   --color-card-dark: #2a1f36;
   --color-hair: rgba(255, 255, 255, 0.1);
@@ -41,6 +47,12 @@
   :root {
     --glow: 0 18px 50px -18px rgba(127, 19, 236, 0.55);
     --ease: var(--ease-smooth);
+
+    /* How opaque the backing behind text is. Both lean high so copy stays
+       crisp over the ambient field while the field still shows through.
+       Raise toward 1 for more contrast, lower for more background. */
+    --surface-alpha: 0.74;
+    --plate-alpha: 0.82;
   }
 
   * {
@@ -186,6 +198,14 @@
   background: radial-gradient(ellipse 85% 60% at 50% -10%, rgba(127, 19, 236, 0.16), transparent 70%);
 }
 
+/* Node-graph + helix field, drawn in components/AmbientField.tsx */
+.ambient__field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* ---------- Scroll reveal ----------------------------------- */
 
 .reveal {
@@ -208,8 +228,10 @@
   position: relative;
   border-radius: 1rem;
   border: 1px solid var(--color-hair);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02));
-  backdrop-filter: blur(10px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)),
+    rgba(25, 16, 34, var(--surface-alpha));
+  backdrop-filter: blur(14px);
   transition:
     border-color 0.4s var(--ease),
     transform 0.4s var(--ease),
@@ -232,6 +254,47 @@
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
   opacity: 0.6;
   pointer-events: none;
+}
+
+/* Readable backing for text with no card of its own. The radial mask makes
+   it densest behind the copy and fades to nothing at the edges, so it never
+   reads as a box — only as the background quietening down. */
+.plate {
+  position: relative;
+  isolation: isolate;
+}
+
+.plate::before {
+  content: '';
+  position: absolute;
+  inset: -1.5rem -2.5rem;
+  z-index: -1;
+  background: rgba(25, 16, 34, var(--plate-alpha));
+  backdrop-filter: blur(10px);
+  /* Two linear gradients intersected: a feathered rectangle. Unlike a radial
+     mask this fades inside its own bounds whatever the block's proportions,
+     so no straight edge is ever left showing. Weighted left, because this
+     copy is left-aligned. */
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 9%, #000 62%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 11%, #000 89%, transparent 100%);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 9%, #000 62%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 11%, #000 89%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+  pointer-events: none;
+}
+
+/* Centred blocks (the footer) fade evenly on both sides instead. */
+.plate--wide::before {
+  inset: -1.5rem -3rem;
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 16%, #000 84%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 16%, #000 84%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
 }
 
 /* ---------- Text -------------------------------------------- */
@@ -571,26 +634,6 @@
   }
 }
 
-/* Highlight that follows the cursor across a card */
-.spotlight::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background: radial-gradient(
-    320px circle at var(--mx, 50%) var(--my, 0%),
-    rgba(168, 85, 247, 0.20),
-    transparent 62%
-  );
-  opacity: 0;
-  transition: opacity 0.45s var(--ease);
-}
-
-.spotlight:hover::after {
-  opacity: 1;
-}
-
 /* Section hairline draws itself in once the section scrolls into view */
 .rule {
   transform: scaleX(0);
@@ -614,10 +657,6 @@
 @media (prefers-reduced-motion: reduce) {
   .rule {
     transform: scaleX(1);
-  }
-
-  .spotlight::after {
-    display: none;
   }
 
   html {

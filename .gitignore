@@ -27,3 +27,6 @@ dist-ssr
 .devcontainer/
 
 reference_files/
+
+# AI session context / handoff notes (local only)
+AI_Context/

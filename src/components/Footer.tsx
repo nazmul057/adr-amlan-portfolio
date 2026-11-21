@@ -23,7 +23,7 @@ const SOCIALS = [
 const Footer: React.FC = () => (
   <footer className="relative mt-10 border-t border-white/10 py-12">
     <div className="mx-auto max-w-[1040px] px-4 sm:px-8">
-      <div className="flex flex-col items-center gap-7 text-center">
+      <div className="plate plate--wide flex flex-col items-center gap-7 text-center">
         <nav className="flex flex-wrap justify-center gap-x-7 gap-y-3">
           {LINKS.map((link) => (
             <Link
